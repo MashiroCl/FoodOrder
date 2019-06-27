@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <script>
+        function loadXMLDoc() {
+            /* var username=$("#username").val();
+             alert(username);*/
+            //获取输入的信息
+            var username=$("#username").val();
+            //ajax方式把信息传递到servlet
+            $.post("findUserServlet",{username:username},function (data) {
+                //回调函数如果结果是true执行
+                if(data.res){
+                    //更改边框颜色，和显示提示信息在span
+                    $("#user_msg").html(data.msg);
+                    $("#username").css("border-color","green");
+                    //弹出对话框
+                    alert("success");
+                }else{
+                    $("#username").css("border-color","red");
+                    $("#user_msg").html(data.msg);
+                    alert("unsuccess");
+                }//表明json传递
+            },"json");
+        }
+        //页面加载完成后执行
+        $(function () {
+            //如果输入框失去焦点执行
+            $("#username").blur(function () {
+                /* var username=$("#username").val();
+                 alert(username);*/
+                //获取输入的信息
+                var username=$("#username").val();
+                //ajax方式把信息传递到servlet
+                $.post("findUserServlet",{username:username},function (data) {
+                    //回调函数如果结果是true执行
+                    if(data.res){
+                        //更改边框颜色，和显示提示信息在span
+                        $("#user_msg").html(data.msg);
+                        $("#username").css("border-color","green");
+                        //弹出对话框
+                        alert("success");
+                    }else{
+                        $("#username").css("border-color","red");
+                        $("#user_msg").html(data.msg);
+                        alert("unsuccess");
+                    }//表明json传递
+                },"json");
+            });
+
+        });
+    </script>
+</head>
+
+<body>
+<!--插入一个输入框，并且在后面加一个span标签，用于显示提示信息-->
+<input name="username" id="username" type="text" placeholder="账号"><span id="user_msg"></span>
+<button type="button" onclick="loadXMLDoc()">start</button>
+</body>
+</html>
