@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+import SelfOrderSystem.views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', SelfOrderSystem.views.login),
+    path('test/', SelfOrderSystem.views.test),
+
 ]

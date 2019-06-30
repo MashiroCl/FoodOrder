@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <script src="js/jquery-3.3.1.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
     <script>
         function loadXMLDoc() {
-            /* var username=$("#username").val();
-             alert(username);*/
+            /* var username=$("#username").val();*/
+
             //获取输入的信息
+            {#var url = $("#editform").attr("action");#}
             var username=$("#username").val();
+            alert(username);
             //ajax方式把信息传递到servlet
-            $.post("findUserServlet",{username:username},function (data) {
+            $.post("http://127.0.0.1:8000/test/",{username:username},function (data) {
                 //回调函数如果结果是true执行
                 if(data.res){
                     //更改边框颜色，和显示提示信息在span
@@ -34,21 +36,23 @@
                  alert(username);*/
                 //获取输入的信息
                 var username=$("#username").val();
-                //ajax方式把信息传递到servlet
-                $.post("findUserServlet",{username:username},function (data) {
-                    //回调函数如果结果是true执行
-                    if(data.res){
-                        //更改边框颜色，和显示提示信息在span
-                        $("#user_msg").html(data.msg);
-                        $("#username").css("border-color","green");
-                        //弹出对话框
-                        alert("success");
-                    }else{
-                        $("#username").css("border-color","red");
-                        $("#user_msg").html(data.msg);
-                        alert("unsuccess");
-                    }//表明json传递
-                },"json");
+                     $.ajax({
+                url: 'http://127.0.0.1:8000/test/',
+                data:{username:username},
+                type: "POST",
+                dataType:'json',
+                success:function(){
+                    if(true) {
+                        window.location.href = 'http://127.0.0.1:8000/test/';
+                    }
+                },
+                error : function(data) {
+                    window.location.href = 'http://127.0.0.1:8000/test/';
+                }
+
+        });
+
+
             });
 
         });
