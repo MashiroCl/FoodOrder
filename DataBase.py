@@ -116,7 +116,7 @@ Store:根据storeID更改number
 '''
 ##############################################################################
 def InsertAdmin(adminID,pwd,aname,adtel):
-    conn=sqlite3.connect("user.db")
+    conn=sqlite3.connect("DataBase.db")
     c=conn.cursor()
     sql='''insert into ADMIN(adminID,pwd,aname,adtel)
             VALUES (?,?,?,?)'''
@@ -126,7 +126,7 @@ def InsertAdmin(adminID,pwd,aname,adtel):
     conn.close()
 
 def Insertcomment(orderID,mealID,evaluate,grade):
-    conn=sqlite3.connect("user.db")
+    conn=sqlite3.connect("DataBase.db")
     c=conn.cursor()
     sql='''insert into comment(orderID,mealID,evaluate,grade)
             VALUES (?,?,?,?)'''
@@ -136,7 +136,7 @@ def Insertcomment(orderID,mealID,evaluate,grade):
     conn.close()
 
 def InsertEmp(empID,ename,etel,password):
-    conn=sqlite3.connect("user.db")
+    conn=sqlite3.connect("DataBase.db")
     c=conn.cursor()
     sql='''insert into Emp(empID,ename,etel,password)
             VALUES (?,?,?,?)'''
@@ -146,7 +146,7 @@ def InsertEmp(empID,ename,etel,password):
     conn.close()
 
 def InsertMenu(mealID,manme,empID,price,picture,grade,element):
-    conn=sqlite3.connect("user.db")
+    conn=sqlite3.connect("DataBase.db")
     c=conn.cursor()
     sql='''insert into Menu(mealID,manme,empID,price,picture,grade,element)
             VALUES (?,?,?,?,?,?,?)'''
@@ -156,7 +156,7 @@ def InsertMenu(mealID,manme,empID,price,picture,grade,element):
     conn.close()
 
 def InsertOrderList(orderID,takeID,mealID,userID,state):
-    conn=sqlite3.connect("user.db")
+    conn=sqlite3.connect("DataBase.db")
     c=conn.cursor()
     sql='''insert into OrderList(orderID,takeID,mealID,userID,state)
             VALUES (?,?,?,?,?)'''
@@ -166,7 +166,7 @@ def InsertOrderList(orderID,takeID,mealID,userID,state):
     conn.close()
 
 def InsertUser(userID,uname,tel,password):
-    conn=sqlite3.connect("user.db")
+    conn=sqlite3.connect("DataBase.db")
     c=conn.cursor()
     sql='''insert into User(userID,uname,tel,password)
             VALUES (?,?,?,?)'''
@@ -176,42 +176,65 @@ def InsertUser(userID,uname,tel,password):
     conn.close()
 
 def UpdateAdmin(adminID,pwd):
-    conn = sqlite3.connect("user.db")
+    conn = sqlite3.connect("DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update ADMIN set pwd='%s' where adminID='%s'"%(pwd,adminID))
     conn.commit()
     conn.close()
 
 def Updatecomment(mealID,evaluate,grade):
-    conn = sqlite3.connect("user.db")
+    conn = sqlite3.connect("DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update comment set evaluate='%s',grade='%s' where mealID='%s'"%(evaluate,grade,mealID))
     conn.commit()
     conn.close()
 
 def UpdateMenu(mealID,grade):
-    conn = sqlite3.connect("user.db")
+    conn = sqlite3.connect("DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update Menu set grade='%s' where mealID='%s'"%(grade,mealID))
     conn.commit()
     conn.close()
 
 def UpdateOrderList(orderId,state):
-    conn = sqlite3.connect("user.db")
+    conn = sqlite3.connect("DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update OrderList set state='%s' where orderID='%s'"%(state,orderId))
     conn.commit()
     conn.close()
 
 def UpdateStore(storeID,number):
-    conn = sqlite3.connect("user.db")
+    conn = sqlite3.connect("DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update Store set number='%s' where storeID='%s'"%(number,storeID))
     conn.commit()
     conn.close()
 
+def SelectUser(uname):
+    conn = sqlite3.connect('DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select * from User where uname='%s'" % (uname))
+    temp = ""
+    for row in c:
+        temp = row
+    conn.close()
+    return temp
+def GetUserNum():
+    conn = sqlite3.connect('DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select * from User")
+    temp =0
+    for row in c:
+        temp = temp+1
+    return temp+1
 
 if __name__=="__main__":
+
     # init_DB()
-    ShowAdmin()
+    # InsertUser(2,"Mashiro","123456789","123456789")
+    # InsertAdmin(1,"12345","MashiroCl","1234556")
+    # temp=SelectUser("MashiroCl")
+    GetUserNum()
+    # print(len(temp))
+    # ShowAdmin()
     # ShowComment()
