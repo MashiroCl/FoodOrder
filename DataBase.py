@@ -44,7 +44,7 @@ def init_DB():
         mname varchar not null,
         empID number,
         price number,
-        pircture varchar,
+        picture varchar,
         grade number,
         element number not null)
         ''')
@@ -68,7 +68,7 @@ def init_DB():
     c = conn.cursor()
     c.execute('''
         CREATE TABLE Store
-        (StoreID number unique,
+        (storeID number unique,
         sname varchar,
         number number)
         ''')
@@ -107,16 +107,70 @@ def ShowComment():
 
 ###############################################################################
 '''
-插入与更新操作请根据以下
-两个函数的方式进行操作
-（就是换下名字和参数就完事儿了 :D ）
+每个表都要有插入操作
+update要求:
+comment表:根据mealID更新evaluate与grade
+Menu表：根据mealID更改grade
+OrderList:更具orderID更改state
+Store:根据storeID更改number
 '''
+##############################################################################
 def InsertAdmin(adminID,pwd,aname,adtel):
     conn=sqlite3.connect("user.db")
     c=conn.cursor()
     sql='''insert into ADMIN(adminID,pwd,aname,adtel)
             VALUES (?,?,?,?)'''
     para=(adminID,pwd,aname,adtel)
+    c.execute(sql,para)
+    conn.commit()
+    conn.close()
+
+def Insertcomment(orderID,mealID,evaluate,grade):
+    conn=sqlite3.connect("user.db")
+    c=conn.cursor()
+    sql='''insert into comment(orderID,mealID,evaluate,grade)
+            VALUES (?,?,?,?)'''
+    para=(orderID,mealID,evaluate,grade)
+    c.execute(sql,para)
+    conn.commit()
+    conn.close()
+
+def InsertEmp(empID,ename,etel,password):
+    conn=sqlite3.connect("user.db")
+    c=conn.cursor()
+    sql='''insert into Emp(empID,ename,etel,password)
+            VALUES (?,?,?,?)'''
+    para=(empID,ename,etel,password)
+    c.execute(sql,para)
+    conn.commit()
+    conn.close()
+
+def InsertMenu(mealID,manme,empID,price,picture,grade,element):
+    conn=sqlite3.connect("user.db")
+    c=conn.cursor()
+    sql='''insert into Menu(mealID,manme,empID,price,picture,grade,element)
+            VALUES (?,?,?,?,?,?,?)'''
+    para=mealID,manme,empID,price,picture,grade,element
+    c.execute(sql,para)
+    conn.commit()
+    conn.close()
+
+def InsertOrderList(orderID,takeID,mealID,userID,state):
+    conn=sqlite3.connect("user.db")
+    c=conn.cursor()
+    sql='''insert into OrderList(orderID,takeID,mealID,userID,state)
+            VALUES (?,?,?,?,?)'''
+    para=orderID,takeID,mealID,userID,state
+    c.execute(sql,para)
+    conn.commit()
+    conn.close()
+
+def InsertUser(userID,uname,tel,password):
+    conn=sqlite3.connect("user.db")
+    c=conn.cursor()
+    sql='''insert into User(userID,uname,tel,password)
+            VALUES (?,?,?,?)'''
+    para=userID,uname,tel,password
     c.execute(sql,para)
     conn.commit()
     conn.close()
@@ -128,18 +182,34 @@ def UpdateAdmin(adminID,pwd):
     conn.commit()
     conn.close()
 
-'''
-每个表都要有插入操作
-update要求:
-comment表:根据mealID更新evaluate与grade
-Menu表：根据mealID更改grade
-OrderList:更具orderID更改state
-Store:根据StoreId更改number
-'''
-#################################################################################
-'''此处填写代码'''
+def Updatecomment(mealID,evaluate,grade):
+    conn = sqlite3.connect("user.db")
+    c = conn.cursor()
+    cursor=c.execute("update comment set evaluate='%s',grade='%s' where mealID='%s'"%(evaluate,grade,mealID))
+    conn.commit()
+    conn.close()
 
-################################################################################
+def UpdateMenu(mealID,grade):
+    conn = sqlite3.connect("user.db")
+    c = conn.cursor()
+    cursor=c.execute("update Menu set grade='%s' where mealID='%s'"%(grade,mealID))
+    conn.commit()
+    conn.close()
+
+def UpdateOrderList(orderId,state):
+    conn = sqlite3.connect("user.db")
+    c = conn.cursor()
+    cursor=c.execute("update OrderList set state='%s' where orderID='%s'"%(state,orderId))
+    conn.commit()
+    conn.close()
+
+def UpdateStore(storeID,number):
+    conn = sqlite3.connect("user.db")
+    c = conn.cursor()
+    cursor=c.execute("update Store set number='%s' where storeID='%s'"%(number,storeID))
+    conn.commit()
+    conn.close()
+
 
 if __name__=="__main__":
     # init_DB()
