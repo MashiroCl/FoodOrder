@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>账单结算</title>
+    <script src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/move-top.js"></script>
+    <script type="text/javascript" src="../static/js/easing.js"></script>
+    <script type="text/javascript" src="../static/js/Plus.js"></script>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+
+    <script>
+    $(function() {
+        var pull 		= $('#pull');
+        menu 		= $('nav ul');
+        menuHeight	= menu.height();
+        $(pull).on('click', function(e) {
+            e.preventDefault();
+            menu.slideToggle();
+        });
+        $(window).resize(function(){
+            var w = $(window).width();
+            if(w > 320 && menu.is(':hidden')) {
+                menu.removeAttr('style');
+            }
+        });
+    });
+    </script>
+
+</head>
+<body onload="Get_OrderList()">
+    <div>
+        <label>
+        本次订单总价格是：<input type="text" name="OrderList" id="OrderList" style="background-color: transparent;border:0;height: 100px;width: 200px">
+        </label>
+        <p>微信支付二维码如下：</p>
+        <a href="#"><img src="../static/image/menu/WeChat1.jpg" title="name" /></a>
+        <p>支付宝支付二维码如下：</p>
+        <a href="#"><img src="../static/image/menu/Zhifubao1.jpg" title="name" /></a>
+    </div>
+    <div>
+        <button type="button" onclick="save_the_menu()">支付成功</button>
+        <button type="button " onclick="abondon()">放弃支付</button>
+    </div>
+</body>
+</html>

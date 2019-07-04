@@ -1,0 +1,13 @@
+剁椒鸡蛋好咸,
+[pair('剁', 'v'), pair('椒', 'ng'), pair('鸡蛋', 'n'), pair('好', 'a'), pair('咸', 'a'), pair(',', 'x')]
+土豆丝不好吃
+[pair('土豆丝', 'n'), pair('不', 'd'), pair('好吃', 'v')]
+
+剁椒鸡蛋好咸,土豆丝不好吃
+Score:-2.0
+Sub-clause0: positive:好 negative:咸 
+Sub-clause1: positive:不1-好吃 
+{'score': -2.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}], 'negative': [{'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}, 'su-clause1': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+

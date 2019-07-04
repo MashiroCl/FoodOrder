@@ -375,12 +375,14 @@ class DictClassifier:
             print(output)
 
     def __divide_sentence_into_clauses(self, the_sentence):
+        #拆成单独的小句子
         the_clauses = self.__split_sentence(the_sentence)
 
         # 识别“是……不是……”句式
         pattern = re.compile(r"([，、。%！；？?,!～~.… ]*)([\u4e00-\u9fa5]*?(要|选)"
                              r"的.+(送|给)[\u4e00-\u9fa5]+?[，。！%；、？?,!～~.… ]+)")
         match = re.search(pattern, the_sentence.strip())
+
         if match is not None and len(self.__split_sentence(match.group(2))) <= 2:
             to_delete = []
             for i in range(len(the_clauses)):
@@ -549,10 +551,10 @@ if __name__=='__main__':
     '''利用情感词典的情感极性分析'''
 
     '''单个句子'''
-    # d = DictClassifier()
-    # a_sentence = "剁椒鸡蛋好咸,土豆丝不好吃"
-    # result = d.analyse_sentence(a_sentence,print_show=True)
-    # print(result)
+    d = DictClassifier()
+    a_sentence = "剁椒鸡蛋好咸,土豆丝不好吃"
+    result = d.analyse_sentence(a_sentence,runout_filepath="hyoupannokeka.txt",print_show=True)
+    #print(result)
 
     '''文件分析'''
     # d=DictClassifier()
@@ -578,11 +580,11 @@ if __name__=='__main__':
     # best_words = fe.best_words(feature_num)
     #
     # svm=SVMClassifier(train_data,train_labels,best_words,C)
-
-    '''利用模型进行分析'''
-    svm=joblib.load("../saved_model/waimai.pkl")
-    print(svm.classify("没以前好吃了"))
-    print(svm.classify("超好吃"))
+    #
+    # '''利用模型进行分析'''
+    # svm=joblib.load("../saved_model/waimai.pkl")
+    # print(svm.classify("没以前好吃了"))
+    # print(svm.classify("超好吃"))
 
 
 

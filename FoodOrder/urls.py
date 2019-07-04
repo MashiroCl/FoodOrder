@@ -21,5 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', SelfOrderSystem.views.login),
     path('test/', SelfOrderSystem.views.test),
+    path('register/',SelfOrderSystem.views.register),
+    path('menu/',SelfOrderSystem.views.menu),
+    path('sign/',SelfOrderSystem.views.sign),
 
 ]

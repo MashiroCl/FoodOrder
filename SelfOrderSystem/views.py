@@ -48,9 +48,24 @@ def sign(request):
 def OrderFood(request):
     order=request.POST.get("")  #获取点的订单
 
-#评价
+'''
+做菜查库存
+'''
 
-#
+'''
+评价部分
+'''
 
 def login(request):
     return render_to_response("login.html")
+
+def register(request):
+    return render_to_response("register.html")
+
+def sign(request):
+    return render_to_response("sign.html")
+
+def menu(request):
+    return render_to_response("menu.html")
+
+

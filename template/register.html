@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>注册-风格转换</title>
+
+    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/fonts/iconic/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="../static/css/register.css" type="text/css"/>
+    <link rel="stylesheet" href="../static/css/util.css" type="text/css"/>
+    <script src="../jquery/jquery-3.2.1.min.js"></script>
+</head>
+
+<body>
+<div class="container-register">
+    <div class="wrap-register p-l-55 p-r-55 p-t-65 p-b-54">
+        <form class="register-form validate-register-form" method="post">
+            <span class="register-form-title p-b-49">注册</span>
+
+            <div class="wrap-input validate-input m-b-15" data-validate="请输入用户名">
+                <input id="username-input" class="input-content" type="text" name="username" placeholder="请输入用户名"
+                       autocomplete="off">
+                <span class="focus-input" data-symbol="&#xf206;"></span>
+            </div>
+
+            <div class="wrap-input validate-input m-b-15" data-validate="请输入电话号码">
+                <input id="phone-input" class="input-content" type="text" name="phone" placeholder="请输入电话号码"
+                       autocomplete="off">
+                <span class="focus-input" data-symbol="&#xf2be;"></span>
+            </div>
+
+            <div class="wrap-input validate-input m-b-15" data-validate="请输入密码">
+                <input id="password-input" class="input-content" type="password" name="passwd" placeholder="请输入密码">
+                <span class="focus-input" data-symbol="&#xf190;"></span>
+            </div>
+
+            <div class="wrap-input validate-input m-b-15" data-validate="请再次输入密码">
+                <input id="verify-password-input" class="input-content" type="password" name="passwd"
+                       placeholder="请再次输入密码">
+                <span class="focus-input" data-symbol="&#xf191;"></span>
+            </div>
+            
+            <!-- 手机验证部分
+            <div class="wrap-input validate-input m-b-15" data-validate="请输入手机号码">
+                <input id="telephone-input" class="input-content" type="text" name="telephone" placeholder="请输入手机号码"
+                    autocomplete="off">
+                <span class="focus-input" data-symbol="&#xf2cc;"></span>
+            </div>
+
+            <div class="wrap-input validate-input" data-validate="请输入验证码">
+                <input id="verify-code-input" class="input-content" type="text" name="verifycode" placeholder="请输入验证码"
+                    autocomplete="off">
+                <input class="get-verify-code-btn" type="button" value="点击获取">
+                <span class="focus-input" data-symbol="&#xf261;"></span>
+            </div>
+            -->
+
+            <div class="container-register-form-btn m-t-30">
+                <div class="wrap-register-form-btn">
+                    <div class="register-form-bgbtn"></div>
+                    <button id="register-submit" class="register-form-btn" onclick="">注 册</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="../static/js/register.js"></script>
+</body>
+</html>
