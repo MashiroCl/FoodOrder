@@ -226,6 +226,7 @@ def GetUserNum():
     temp =0
     for row in c:
         temp = temp+1
+        print(row)
     return temp+1
 
 if __name__=="__main__":

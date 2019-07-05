@@ -14,24 +14,29 @@ def test(request):
 登陆注册部分
 '''
 # 注册
-def register(request):
+def registerCheck(request):
     username=request.POST.get('username')
     password=request.POST.get('password')
-    tele=request.POST.get('telephone_number')
+    phone=request.POST.get('phone')
+
+    print(username)
+    print(password)
+    print(phone)
 
     #查重
     #合格 未出现重复
     if(len(DataBase.SelectUser(username))==0):
         #注册成功
         # 写入数据库
-        DataBase.InsertUser(userID=DataBase.GetUserNum(),username=username,tel=tele,password=password)
+        DataBase.InsertUser(userID=DataBase.GetUserNum(),uname=username,tel=phone,password=password)
     else:
         #用户名重复
         pass
 
+    return HttpResponse("Over")
 
 #登录
-def sign(request):
+def signCheck(request):
     username = request.POST.get('username')
     password = request.POST.get('password')
     #查数据库

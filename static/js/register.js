@@ -29,10 +29,10 @@
                 check = false;
             }
         }
-        
         const password = $('#password-input').val();
         const verifyPassword = $('#verify-password-input').val();
         const phone = $('#phone-input').val();
+
         if(password !== verifyPassword) {
             alert("两次密码输入不一致，请重新输入！");
             check = false;
@@ -44,33 +44,6 @@
         // Register
         if (check === true) {
             const username = $('#username-input').val();
-
-            var post_data = {
-                "username": username,
-                "password": password,
-                "phone": phone
-            };
-
-            $.ajax({
-                url: "/registerCheck",    // 待添加：注册请求url
-                contentType: 'application/json',
-                type: 'POST',
-                data: JSON.stringify(post_data),
-                success: function (result) {
-                    console.log('成功');
-                },
-                fail: function (result) {
-                    console.log('失败');
-                }
-            }).done(function (data) {    //回调函数获取的data就是view返回的json数据
-                if (data.res === 0) {
-                    alert('该用户名已被注册，请重试');
-                    // $('#errmsg').show().html() //jQuery动态添加网页内容
-                } else {
-                    // alert('注册成功');
-                    location.href = '/sign/';      //验证成功登录首页
-                }
-            });
         }
 
         return check;
@@ -102,6 +75,8 @@
     //         }
     //     }
     // }
+    alert("before showValidate");
+
 
     function showValidate(input) {
         var thisAlert = $(input).parent();
@@ -147,5 +122,24 @@
 //             }
 //         }
 //     })
+    $('register-submit').click(function () {
+        $.ajax({
+            url:"http://127.0.0.1:8000/registerCheck",            //!!!!!!!!!!!!!!
+            data:{username:username,
+                password:password,
+                phone:phone},
+            type: "POST",
+            dataType:'json',
+            success:function(){
+                if(true) {
+                    window.location.href = dr;
+                }
+            },
+            error : function(data) {
+                alert("出错：" + data.code);
+            }
+
+        });
+    })
 
 })(jQuery);

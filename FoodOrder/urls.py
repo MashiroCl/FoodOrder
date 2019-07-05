@@ -24,5 +24,5 @@ urlpatterns = [
     path('register/',SelfOrderSystem.views.register),
     path('menu/',SelfOrderSystem.views.menu),
     path('sign/',SelfOrderSystem.views.sign),
-
+    path('registerCheck/',SelfOrderSystem.views.registerCheck),
 ]

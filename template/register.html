@@ -5,12 +5,13 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>注册-风格转换</title>
 
-    <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../static/fonts/iconic/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="../static/css/register.css" type="text/css"/>
     <link rel="stylesheet" href="../static/css/util.css" type="text/css"/>
-    <script src="../jquery/jquery-3.2.1.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>src=</script>
 </head>
 
 <body>
@@ -60,7 +61,45 @@
             <div class="container-register-form-btn m-t-30">
                 <div class="wrap-register-form-btn">
                     <div class="register-form-bgbtn"></div>
-                    <button id="register-submit" class="register-form-btn" onclick="">注 册</button>
+                    <button id="register-submit" class="register-form-btn" onclick="register_submit()">注 册</button>
+                    <script>
+                        function register_submit() {
+                            let username = $("#username-input").val();
+                                    const password = $('#password-input').val();
+                                    const phone = $('#phone-input').val();
+                            alert(username);
+                             $.post("http://127.0.0.1:8000/registerCheck/",{username:username,password:password,phone:phone},function (data) {
+                                            //回调函数如果结果是true执行
+                                            if(data.res == "Over"){
+                                                //更改边框颜色，和显示提示信息在span
+                                                alert("success");
+                                                window.open("https://www.baidu.com",'_self');
+                                            }else{
+                                                alert("unsuccess");
+                                            }
+                                            //表明json传递
+                                        },"json");
+                                    $.ajax({
+                                        url:"http://127.0.0.1:8000/registerCheck",            //!!!!!!!!!!!!!!
+                                        data:{username:username,
+                                            password:password,
+                                            phone:phone},
+                                        type: "POST",
+                                        dataType:'json',
+                                        success:function(data){
+                                            if(data == "Over") {
+                                                window.location.href = "https://www.baidu.com";
+
+                                            }
+                                        },
+                                        error : function(data) {
+                                            alert("出错：" + data.code);
+                                        }
+
+                                    });
+                            alert("waiting");
+                        }
+                    </script>>
                 </div>
             </div>
         </form>
