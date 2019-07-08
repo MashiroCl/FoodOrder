@@ -2,7 +2,8 @@ from django.shortcuts import render
 from django.shortcuts import render_to_response
 from django.http import HttpResponse
 import DataBase
-
+from django.http import JsonResponse
+import json
 
 def test(request):
     username=request.POST.get('username')
@@ -32,8 +33,9 @@ def registerCheck(request):
     else:
         #用户名重复
         pass
+    dict=""
 
-    return HttpResponse("Over")
+    return JsonResponse({'res': 1})
 
 #登录
 def signCheck(request):

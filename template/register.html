@@ -80,20 +80,24 @@
                                             //表明json传递
                                         },"json");
                                     $.ajax({
-                                        url:"http://127.0.0.1:8000/registerCheck",            //!!!!!!!!!!!!!!
+                                        url:"http://127.0.0.1:8000/registerCheck/",            //!!!!!!!!!!!!!!
                                         data:{username:username,
                                             password:password,
                                             phone:phone},
                                         type: "POST",
                                         dataType:'json',
-                                        success:function(data){
-                                            if(data == "Over") {
-                                                window.location.href = "https://www.baidu.com";
-
-                                            }
+                                         success: function (result) {
+                                            console.log('成功');
                                         },
-                                        error : function(data) {
-                                            alert("出错：" + data.code);
+                                        fail: function (result) {
+                                            console.log('失败');
+                                        }
+                                    }).done(function (data) {    //回调函数获取的data就是view返回的json数据
+                                        if (data.res === 0) {
+                                            alert('该用户名已被注册，请重试');
+                                        } else {
+                                            // alert('注册成功');
+                                            location.href = '/sign/';      //验证成功登录首页
                                         }
 
                                     });

@@ -130,15 +130,19 @@
                 phone:phone},
             type: "POST",
             dataType:'json',
-            success:function(){
-                if(true) {
-                    window.location.href = dr;
+           success: function (result) {
+                    console.log('成功');
+                },
+                fail: function (result) {
+                    console.log('失败');
                 }
-            },
-            error : function(data) {
-                alert("出错：" + data.code);
-            }
-
+            }).done(function (data) {    //回调函数获取的data就是view返回的json数据
+                if (data.res === 0) {
+                    alert('该用户名已被注册，请重试');
+                } else {
+                    // alert('注册成功');
+                    location.href = '/sign/';      //验证成功登录首页
+                }
         });
     })
 
