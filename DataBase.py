@@ -222,20 +222,41 @@ def SelectUser(uname):
 def GetUserNum():
     conn = sqlite3.connect('DataBase.db')
     c = conn.cursor()
-    cursor = c.execute("select * from User")
-    temp =0
+    cursor = c.execute("select count(uname) from User")
+
+    result=cursor.fetchone()
+    print(result[0])
+
+
+def GetOrderListNum():
+    conn = sqlite3.connect('DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select count(orderID) from OrderList")
+    result=cursor.fetchone()
+    print(result[0])
+
+def GetOrderList(state):
+    conn = sqlite3.connect('DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select * from OrderList where state='%s'" % (state))
+    temp = []
     for row in c:
-        temp = temp+1
-        print(row)
-    return temp+1
+        temp.append(row)
+    conn.close()
+    return temp
+
+
 
 if __name__=="__main__":
-
     # init_DB()
     # InsertUser(2,"Mashiro","123456789","123456789")
     # InsertAdmin(1,"12345","MashiroCl","1234556")
+    # InsertEmp()
     # temp=SelectUser("MashiroCl")
-    GetUserNum()
+    # InsertOrderList("4","2","lalqweala","asd","waiting")
+    # GetUserNum()
+    GetOrderListNum()
+    print(GetOrderList("waiting"))
     # print(len(temp))
     # ShowAdmin()
     # ShowComment()

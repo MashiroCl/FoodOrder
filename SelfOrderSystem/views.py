@@ -29,7 +29,7 @@ def registerCheck(request):
     if(len(DataBase.SelectUser(username))==0):
         #注册成功
         # 写入数据库
-        DataBase.InsertUser(userID=DataBase.GetUserNum(),uname=username,tel=phone,password=password)
+        DataBase.InsertUser(userID=DataBase.GetUserNum()+1,uname=username,tel=phone,password=password)
     else:
         #用户名重复
         pass
