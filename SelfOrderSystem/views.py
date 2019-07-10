@@ -94,6 +94,10 @@ def menu(request):
 def news(request):
     return render_to_response("news.html")
 
+def Settlement(request):
+    return render_to_response("Settlement.html")
+
+
 def getComment(request):
     id=request.POST.get("id")
     url=request.POST.get("url")
@@ -104,4 +108,7 @@ def getComment(request):
     comment=json.dumps(comment)
     comment=JsonResponse({"comment":comment})
     return comment
+
+def getOrder(request):
+    order=DataBase.GetOrderList('waiting')
 

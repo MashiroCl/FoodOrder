@@ -26,7 +26,9 @@ function checkNumber(obj) {
 
 function openwindows() {
     Final_Settlement();
-    window.open("http://localhost:63342/Order_and_review/Settlement.html?_ijt=4v4bs8tkc3l5i6qg8lj69nn7gc", "newwindow", "height=800, width=800, top=200,left=400,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+    alert("sdfawef");
+    jump1();
+    //window.open("http://127.0.0.1:8000/Settlement/", "newwindow", "height=800, width=800, top=200,left=400,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 }
 //写成一行
 
@@ -50,6 +52,17 @@ function Final_Settlement() {
         temp=temp+"炖石头 份数："+Dish3+"\n"
     }
     alert(temp+ "总计价格为： " + Price_in_total);
+}
+
+function jump1(){
+    Dish1=$("#B11").val()
+    Dish2=$("#B21").val()
+    Dish3=$("#B31").val()
+    var Price_in_total = $("#B11").val()*10 + $("#B21").val()*11 + $("#B31").val()*12 ;//通过id获取文本框对象;
+    //document.cookie=Price_in_total
+    let url = "../Settlement&price="+Price_in_total;//此处拼接内容
+    window.open(url, "newwindow", "height=800, width=800, top=200,left=400,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+    //window.location.href = url;
 }
 function Get_OrderList(){
     var res=document.cookie;

@@ -75,6 +75,13 @@
                 alert("WDNMD");
                 comment=JSON.parse(data.comment)
                 alert("comment = "+comment);
+                var tableData="<tr>";
+                    for(var i=0;i<comment.length;i++){
+                        alert(comment.length);
+                        tableData+="<tr>"+"<td>"+comment[i]+"</td>"+"</tr>";
+                    }
+                    tableData+="</tr>";
+                    $("#tbody1").html(tableData);
             },
                 error:function(data){
                 alert("lsdfijlasejf");
@@ -118,6 +125,11 @@
 <div>
     赞:<button id="btn_zan">0</button>
     踩:<button id="btn_cai">0</button>
+    <table>
+        <tbody id="tbody1">
+        </tbody>
+    </table>
+
     <script>
         function dianZan(){
             var i = 0;

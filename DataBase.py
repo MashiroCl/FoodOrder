@@ -251,7 +251,7 @@ def GetComment(mealID):
     cursor = c.execute("select * from comment where mealID='%s'" % (mealID))
     temp1=[]
     for row in c:
-        lalala=[row[2],row[3]]
+        lalala=[row[2]]
         temp1.append(lalala)
     conn.close()
     print(temp1)
