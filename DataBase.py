@@ -245,6 +245,18 @@ def GetOrderList(state):
     conn.close()
     return temp
 
+def GetComment(mealID):
+    conn = sqlite3.connect('DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select * from comment where mealID='%s'" % (mealID))
+    temp1=[]
+    for row in c:
+        lalala=[row[2],row[3]]
+        temp1.append(lalala)
+    conn.close()
+    print(temp1)
+
+    return temp1
 
 
 if __name__=="__main__":
@@ -255,8 +267,11 @@ if __name__=="__main__":
     # temp=SelectUser("MashiroCl")
     # InsertOrderList("4","2","lalqweala","asd","waiting")
     # GetUserNum()
-    GetOrderListNum()
-    print(GetOrderList("waiting"))
+    # GetOrderListNum()
+    # Insertcomment("2","2","不好吃啊","59")
+    GetComment(2)
+    # temp=GetOrderList("waiting")
+    # print(temp)
     # print(len(temp))
     # ShowAdmin()
     # ShowComment()

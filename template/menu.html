@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>菜品详情</title>
+    <script src="../static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="../static/js/move-top.js"></script>
+    <script type="text/javascript" src="../static/js/easing.js"></script>
+    <script type="text/javascript" src="../static/js/Plus.js"></script>
+    <script src="../static/js/jquery-3.0.0.min.js"></script>
+    <script src="../static/js/jquery.params.js"></script>
+    <script type="text/javascript">
+
+        jQuery(document).ready(function($) {
+            $(".scroll").click(function(event){
+                event.preventDefault();
+                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+            });
+        });
+    </script>
+
+    <script>
+        //按名称获取Cookie
+        function GetCookieByName(name) {
+            var startIndex = document.cookie.indexOf(name); //开始索引
+            alert(startIndex);
+            if (startIndex > -1) {
+                var tempStr = document.cookie.substring(startIndex, document.cookie.length);
+                var endIndex = tempStr.indexOf(";")//结束索引：第一个分号 索引
+                var item = tempStr.substring(0, endIndex);
+                return item.split("=")[1];
+            }
+            return "";
+        }
+
+        //页面加载函数
+        $(function() {
+            var text = window.location.search;
+            var param = text.split("?");
+            var Name = decodeURIComponent(param[1].split("=")[1]);
+            var Price = decodeURIComponent(param[2].split("=")[1]);
+
+            var url = "../menu?name="+Name+"?price="+Price;
+            //var Name = GetCookieByName("name");
+            //var Price = GetCookieByName("price");
+
+            $("#name").text(Name);
+            $("#label").html(Name);
+            $("#price").text(Price);
+
+            alert(Name);
+            alert(Price);
+
+            $.ajax({
+            url:"http://127.0.0.1:8000/getComment/",
+            data:{id: 1,
+                   url: url},
+            type: "POST",
+             datatype:"json",
+   //        success: function (result) {
+     //               alert("Success");
+      //          },
+     //           fail: function (result) {
+     //               alert("Fail");
+     //           }
+     //       }).done(function (data) {    //回调函数获取的data就是view返回的json数据
+     //           alert(data);
+      //          var jsonData = JSON.parse(data);
+      //          alert(data);
+      //          $("#name").text(jsonData.data);
+      //  }
+      //  );
+                success: function (data) {
+                {#comment = JSON.parse('{"comment"}');#}
+                alert("WDNMD");
+                comment=JSON.parse(data.comment)
+                alert("comment = "+comment);
+            },
+                error:function(data){
+                alert("lsdfijlasejf");
+                alert(data)
+
+                }
+              });
+            alert("请求成功");
+
+            var pull 		= $('#pull');
+            menu 		= $('nav ul');
+            menuHeight	= menu.height();
+            $(pull).on('click', function(e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+            $(window).resize(function(){
+                var w = $(window).width();
+                if(w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+
+        });
+
+    </script>
+</head>
+
+<body onload="Get_OrderList()">
+<div>
+    <label id="label">
+
+    </label>
+    <div class="recent-news-grid-right">
+        <img src="..static/image/menu/d2.jpg" title="图片仅供参考" />
+        <div id="name"> </div>
+        <p>配方：新鲜大白菜 + 地沟油</p>
+        <div id="price"> </div>
+    </div>
+</div>
+<div>
+    赞:<button id="btn_zan">0</button>
+    踩:<button id="btn_cai">0</button>
+    <script>
+        function dianZan(){
+            var i = 0;
+            return function(){
+                this.innerHTML ="+"+ ++i;
+            }
+        }
+        btn_zan.onclick = dianZan();
+        function caiZan(){
+            var i = 0;
+            return function(){
+                this.innerHTML = --i;
+            }
+        }
+        btn_cai.onclick = caiZan();
+    </script>
+</div>
+</body>
+</html>

@@ -32,7 +32,23 @@
 					menu.removeAttr('style');
 				}
 			});
+
+
+				$("#pic1").on("click",function(){
+                var name = $("#name1").text();
+                var price = $("#price1").text();
+                alert(name);
+                //document.cookie = "name="+name;
+                //document.cookie = "price="+price;
+                alert(price);
+				jump1(name, price);
+			});
+
 		});
+        function jump1(name, price){
+            let url = "../menu?name="+name+"?price="+price;//此处拼接内容
+            window.location.href = url;
+        }
 		</script>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -88,10 +104,10 @@
 				<div class="recent-news">
 					<div class="recent-news-grid">
 						<div class="recent-news-grid-left">
-							<a href="#"><img src="../static/image/menu/d1.jpg" title="name" /></a>
+							<img src="../static/image/menu/d2.jpg" id="pic1" />
 						</div>
 						<div class="recent-news-grid-right">
-							<p>油炸大白菜</p>
+							<p id="name1">油炸大白菜</p>
 							<p>包含你没有尝过的全新地沟油。</p>
 							<p id="price1">
 								单价：10元
@@ -321,7 +337,6 @@
     </div>
 </div>
 
-	
+
 </body>
 </html>
-

@@ -6,10 +6,22 @@ from django.http import JsonResponse
 import json
 
 def test(request):
-    username=request.POST.get('username')
-    print(username)
-    dict=""
-    return HttpResponse("牵牛花与加濑同学")
+    # username=request.POST.get('username')
+    # print(username)
+    # dict=""
+    # return HttpResponse("牵牛花与加濑同学")
+    # data={}
+    data= DataBase.GetOrderList("waiting")
+    # data={}
+    # data['data']='frick'
+    return render_to_response('login.html',{'data':data})
+    # return render_to_response('login.html')
+
+def test1(request):
+    data = DataBase.GetOrderList("waiting")
+    # data={}
+    # data['data']='frick'
+    return render_to_response('login.html', {'data': data})
 
 '''
 登陆注册部分
@@ -30,12 +42,10 @@ def registerCheck(request):
         #注册成功
         # 写入数据库
         DataBase.InsertUser(userID=DataBase.GetUserNum()+1,uname=username,tel=phone,password=password)
+        return JsonResponse({'res': 1})
     else:
-        #用户名重复
-        pass
-    dict=""
+        return JsonResponse({'res': 0})
 
-    return JsonResponse({'res': 1})
 
 #登录
 def signCheck(request):
@@ -44,10 +54,10 @@ def signCheck(request):
     #查数据库
     if(DataBase.SelectUser(username)[3]!=password):
         #提示用户名密码不匹配
-        pass
+        return JsonResponse({'res': 0})
     else:
         #登陆成功
-        pass
+        return JsonResponse({'res': 1})
 
 '''
 点餐部分
@@ -64,7 +74,13 @@ def OrderFood(request):
 '''
 
 def login(request):
-    return render_to_response("login.html")
+    waitingOrder=DataBase.GetOrderList("waiting")
+
+    # return render_to_response("login.html")
+    data=[1,2,3,4]
+    #传给html用
+    return render_to_response(request,'login.html',{'data':data})
+    #传递给js用
 
 def register(request):
     return render_to_response("register.html")
@@ -75,4 +91,17 @@ def sign(request):
 def menu(request):
     return render_to_response("menu.html")
 
+def news(request):
+    return render_to_response("news.html")
+
+def getComment(request):
+    id=request.POST.get("id")
+    url=request.POST.get("url")
+    print(id)
+    print(url)
+    comment =DataBase.GetComment(mealID=2);
+    print(comment)
+    comment=json.dumps(comment)
+    comment=JsonResponse({"comment":comment})
+    return comment
 

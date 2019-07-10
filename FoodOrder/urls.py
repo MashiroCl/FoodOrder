@@ -25,4 +25,7 @@ urlpatterns = [
     path('menu/',SelfOrderSystem.views.menu),
     path('sign/',SelfOrderSystem.views.sign),
     path('registerCheck/',SelfOrderSystem.views.registerCheck),
+    path('news/', SelfOrderSystem.views.news),
+    path('getComment/', SelfOrderSystem.views.getComment),
+
 ]
