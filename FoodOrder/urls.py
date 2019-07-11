@@ -28,5 +28,9 @@ urlpatterns = [
     path('news/', SelfOrderSystem.views.news),
     path('getComment/', SelfOrderSystem.views.getComment),
     path('Settlement/', SelfOrderSystem.views.Settlement),
+    path('PayEnd/', SelfOrderSystem.views.Settlement),
+    path('KitchenGetOrder/',SelfOrderSystem.views.KitchenGetOrder),
+    path('Kitchen/', SelfOrderSystem.views.Kitchen),
+    path('signCheck/', SelfOrderSystem.views.signCheck),
 
 ]

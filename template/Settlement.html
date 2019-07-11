@@ -39,6 +39,10 @@
 <body onload="Get_OrderList()">
     <div>
         <label>
+            <p>您的订单是</p>
+            <span id="Order"></span>
+            <span></span>
+            <p></p>
             <span>本次订单总价格是：</span>
             <span id="OrderList"></span>
             <span>元</span>
@@ -47,7 +51,8 @@
              var text = window.location.search;
             var param = text.split("?");
             var price = decodeURIComponent(param[1].split("=")[1]);
-
+            var Order = decodeURIComponent(param[2].split("=")[1]);
+            $("#Order").text(Order);
             $("#OrderList").text(price);
             </script>
         <p>微信支付二维码如下：</p>

@@ -34,6 +34,7 @@
 			});
 
 
+
 				$("#pic1").on("click",function(){
                 var name = $("#name1").text();
                 var price = $("#price1").text();
@@ -83,13 +84,20 @@
 						 <nav class="top-nav">
 							<ul class="top-nav">
 								食堂自助点餐系统登录界面
+                                <p>当前用户：<span id="userID"></span></p>
 							</ul>
 						</nav>
 						<div class="clearfix"> </div>
 					</div>
 				</div>
 			</div>
-
+<script>
+    			    //设置userID
+                let text = window.location.search;
+                let param = text.split("?");
+                let userID = decodeURIComponent(param[1].split("=")[1]);
+                $("#userID").text(userID);
+</script>
 			<div class="news">
 				<div class="news-header" >
 					<div class="container">

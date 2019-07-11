@@ -87,6 +87,15 @@ def init_DB():
     conn.commit()
     conn.close()
 
+    conn = sqlite3.connect("DataBase.db")
+    c = conn.cursor()
+    c.execute('''
+        CREATE TABLE SequenceNum
+        (num number unique)
+        ''')
+    conn.commit()
+    conn.close()
+
 def ShowAdmin():
     conn = sqlite3.connect('DataBase.db')
     c = conn.cursor()
@@ -175,6 +184,16 @@ def InsertUser(userID,uname,tel,password):
     conn.commit()
     conn.close()
 
+def InsertSequenceNum(num):
+    conn=sqlite3.connect("DataBase.db")
+    c=conn.cursor()
+    sql='''insert into SequenceNum(num)
+            VALUES (?)'''
+    para=num
+    c.execute(sql,para)
+    conn.commit()
+    conn.close()
+
 def UpdateAdmin(adminID,pwd):
     conn = sqlite3.connect("DataBase.db")
     c = conn.cursor()
@@ -225,8 +244,7 @@ def GetUserNum():
     cursor = c.execute("select count(uname) from User")
 
     result=cursor.fetchone()
-    print(result[0])
-
+    return  result[0]
 
 def GetOrderListNum():
     conn = sqlite3.connect('DataBase.db')
@@ -255,23 +273,43 @@ def GetComment(mealID):
         temp1.append(lalala)
     conn.close()
     print(temp1)
-
     return temp1
+
+def GetSequenceNum( ):
+    conn = sqlite3.connect('DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select * from SequenceNum")
+    temp1=[]
+    for row in c:
+        temp1.append(row[0])
+    conn.close()
+
+    conn = sqlite3.connect("DataBase.db")
+    c = conn.cursor()
+    cursor=c.execute("update SequenceNum set num='%s'"%(temp1[0]+1))
+    conn.commit()
+    conn.close()
+    return temp1[0]
 
 
 if __name__=="__main__":
     # init_DB()
-    # InsertUser(2,"Mashiro","123456789","123456789")
+    # InsertUser("3","Mashiro","123456789","123456789")
     # InsertAdmin(1,"12345","MashiroCl","1234556")
     # InsertEmp()
     # temp=SelectUser("MashiroCl")
-    # InsertOrderList("4","2","lalqweala","asd","waiting")
-    # GetUserNum()
+    # InsertOrderList("3","3","lalqweala","asd","waiting")
+    # UpdateOrderList("1","cooked")
+    # InsertUser(GetUserNum()+1,"Mashiro","123456789","123456789")
+    print(GetUserNum())
     # GetOrderListNum()
     # Insertcomment("2","2","不好吃啊","59")
-    GetComment(2)
+    # GetComment(2)
     # temp=GetOrderList("waiting")
     # print(temp)
     # print(len(temp))
     # ShowAdmin()
     # ShowComment()
+    # InsertSequenceNum("1")
+    # SequenceNum=GetSequenceNum()
+    # print(SequenceNum)

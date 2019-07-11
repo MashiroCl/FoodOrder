@@ -75,7 +75,7 @@
     //         }
     //     }
     // }
-    alert("before showValidate");
+    // alert("before showValidate");
 
 
     function showValidate(input) {

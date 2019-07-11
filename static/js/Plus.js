@@ -56,12 +56,26 @@ function Final_Settlement() {
 }
 
 function jump2(){
+    let text = window.location.search;
+    let param = text.split("?");
+    let userID = decodeURIComponent(param[1].split("=")[1]);
     Dish1=$("#B11").val()
     Dish2=$("#B21").val()
     Dish3=$("#B31").val()
     var Price_in_total = $("#B11").val()*10 + $("#B21").val()*11 + $("#B31").val()*12 ;//通过id获取文本框对象;
     //document.cookie=Price_in_total
-    let url1 = "../Settlement/?price="+Price_in_total;//此处拼接内容
+    var temp=" ";
+    
+    if(Dish1!=0){
+        temp=temp+"油炸大白菜 份数："+Dish1+"\n"
+    }
+    if(Dish2!=0){
+        temp=temp+"馒头蘸红糖 份数："+Dish2+"\n"
+    }
+    if(Dish3!=0){
+        temp=temp+"炖石头 份数："+Dish3+"\n"
+    }
+    let url1 = "../Settlement/?price="+Price_in_total+"?order="+temp+"?username="+userID;//此处拼接内容
     window.open(url1);
     //window.location.href = url;
 }

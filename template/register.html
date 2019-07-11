@@ -68,17 +68,6 @@
                                     const password = $('#password-input').val();
                                     const phone = $('#phone-input').val();
                             alert(username);
-                             $.post("http://127.0.0.1:8000/registerCheck/",{username:username,password:password,phone:phone},function (data) {
-                                            //回调函数如果结果是true执行
-                                            if(data.res == "Over"){
-                                                //更改边框颜色，和显示提示信息在span
-                                                alert("success");
-                                                window.open("https://www.baidu.com",'_self');
-                                            }else{
-                                                alert("unsuccess");
-                                            }
-                                            //表明json传递
-                                        },"json");
                                     $.ajax({
                                         url:"http://127.0.0.1:8000/registerCheck/",            //!!!!!!!!!!!!!!
                                         data:{username:username,

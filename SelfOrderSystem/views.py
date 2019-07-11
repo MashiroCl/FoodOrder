@@ -49,8 +49,11 @@ def registerCheck(request):
 
 #登录
 def signCheck(request):
+    print("sign checking")
     username = request.POST.get('username')
     password = request.POST.get('password')
+    print(username)
+    print(password)
     #查数据库
     if(DataBase.SelectUser(username)[3]!=password):
         #提示用户名密码不匹配
@@ -112,3 +115,17 @@ def getComment(request):
 def getOrder(request):
     order=DataBase.GetOrderList('waiting')
 
+def PayEnd(request):
+    order=request.POST.get("order")
+    price=request.POST.get("price")
+    DataBase.InsertOrderList(DataBase.GetOrderListNum()+1,DataBase.GetSequenceNum(),order," ","waiting")     #UserID没有
+
+def Kitchen(request):
+    return render_to_response("Kitchen.html")
+
+def KitchenGetOrder(request):
+    order=DataBase.GetOrderList("waiting")
+    order=json.dumps(order)
+    order=JsonResponse({"order":order})
+
+    return order

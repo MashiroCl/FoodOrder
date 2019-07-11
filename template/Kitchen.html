@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>等待制作</title>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery-3.0.0.min.js"></script>
+    <script src="../static/js/jquery.params.js"></script>
+    <script>
+        //每5秒执行一次myFunction()方法
+        window.setInterval(myFunction, 1000 * 10);
+        var i = 1;
+
+        function myFunction() {
+            console.log("轮训任务=================>" + i++);
+
+            $.ajax({
+                url:"http://127.0.0.1:8000/KitchenGetOrder/",
+                data:{state: "check"},
+                type: "POST",
+                datatype:"json",
+                success: function (data) {
+                    alert("SUCCESS");
+                    order=JSON.parse(data.order);
+                    alert("order = "+order);
+                    var tableData="<tr>"
+                    for(var i=0;i<order.length;i++){
+                        tableData+="<tr>"+"<td>"+order[i]+"</td>"+"</tr>"
+                    }
+                    tableData+="</tr>"
+                    $("#tbody1").html(tableData)
+                    alert(tableData);
+                },
+                error:function(data){
+                    alert("FAIL");
+                    alert(data)
+
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div>
+    <h3>正在烹饪中……</h3>
+    <table>
+        <tbody id="tbody1">
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
