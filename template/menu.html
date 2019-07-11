@@ -57,21 +57,7 @@
                    url: url},
             type: "POST",
              datatype:"json",
-   //        success: function (result) {
-     //               alert("Success");
-      //          },
-     //           fail: function (result) {
-     //               alert("Fail");
-     //           }
-     //       }).done(function (data) {    //回调函数获取的data就是view返回的json数据
-     //           alert(data);
-      //          var jsonData = JSON.parse(data);
-      //          alert(data);
-      //          $("#name").text(jsonData.data);
-      //  }
-      //  );
                 success: function (data) {
-                {#comment = JSON.parse('{"comment"}');#}
                 alert("WDNMD");
                 comment=JSON.parse(data.comment)
                 alert("comment = "+comment);
@@ -84,8 +70,7 @@
                     $("#tbody1").html(tableData);
             },
                 error:function(data){
-                alert("lsdfijlasejf");
-                alert(data)
+                alert("ERROR");
 
                 }
               });

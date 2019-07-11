@@ -39,14 +39,17 @@
 <body onload="Get_OrderList()">
     <div>
         <label>
+            <span>本次订单总价格是：</span>
+            <span id="OrderList"></span>
+            <span>元</span>
+        </label>
             <script>
-            var text = window.location.search;
-            var param = text.split("&");
+             var text = window.location.search;
+            var param = text.split("?");
             var price = decodeURIComponent(param[1].split("=")[1]);
+
             $("#OrderList").text(price);
             </script>
-        本次订单总价格是：<input type="text" name="OrderList" id="OrderList" style="background-color: transparent;border:0;height: 100px;width: 200px">
-        </label>
         <p>微信支付二维码如下：</p>
         <a href="#"><img src="../static/image/menu/WeChat1.jpg" title="name" /></a>
         <p>支付宝支付二维码如下：</p>

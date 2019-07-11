@@ -25,9 +25,10 @@ function checkNumber(obj) {
 }
 
 function openwindows() {
+    alert("OPENWINDOW");
     Final_Settlement();
-    alert("sdfawef");
-    jump1();
+    alert("JUMP!");
+    jump2();
     //window.open("http://127.0.0.1:8000/Settlement/", "newwindow", "height=800, width=800, top=200,left=400,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 }
 //写成一行
@@ -54,14 +55,14 @@ function Final_Settlement() {
     alert(temp+ "总计价格为： " + Price_in_total);
 }
 
-function jump1(){
+function jump2(){
     Dish1=$("#B11").val()
     Dish2=$("#B21").val()
     Dish3=$("#B31").val()
     var Price_in_total = $("#B11").val()*10 + $("#B21").val()*11 + $("#B31").val()*12 ;//通过id获取文本框对象;
     //document.cookie=Price_in_total
-    let url = "../Settlement&price="+Price_in_total;//此处拼接内容
-    window.open(url, "newwindow", "height=800, width=800, top=200,left=400,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
+    let url1 = "../Settlement/?price="+Price_in_total;//此处拼接内容
+    window.open(url1);
     //window.location.href = url;
 }
 function Get_OrderList(){
