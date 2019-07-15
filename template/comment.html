@@ -29,9 +29,9 @@
         datatype:"json",
         success: function (data) {
             alert("感谢您的评价！");
-            order=JSON.parse(data.order);
-            alert("order = "+order);
-            $(window).attr("location","../news")
+            window.location.href = "../news?id="+userID;
+            return false;
+            //$(window).attr("location","../news")
 
         },
         error:function(data){

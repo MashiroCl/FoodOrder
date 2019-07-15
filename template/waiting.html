@@ -50,7 +50,8 @@
     function getMeal() {
         let text = window.location.search;
         let param = text.split("?");
-        let userID = decodeURIComponent(param[2].split("=")[1]);
+        let userID = decodeURIComponent(param[4].split("=")[1]);
+        alert("用户名是"+userID);
         let d1 = decodeURIComponent(param[3]);
         let d2 = decodeURIComponent(param[4]);
         let d3 = decodeURIComponent(param[5]);

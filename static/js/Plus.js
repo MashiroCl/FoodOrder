@@ -106,7 +106,7 @@ function GetWaitingNum() {
             waitingNum=JSON.parse(data.waitingNum)
             var orderNum=JSON.parse(data.orderNum)
             alert("comment = "+waitingNum);
-            let url = "../waiting?waitingNum="+waitingNum+"?orderNum="+orderNum+"?orderAbbre="+orderAbbre;
+            let url = "../waiting?waitingNum="+waitingNum+"?orderNum="+orderNum+"?orderAbbre="+orderAbbre+"?userID="+userID;
             window.location.href = url;
         },
         error:function(data){

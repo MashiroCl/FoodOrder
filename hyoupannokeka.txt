@@ -508,3 +508,93 @@ Sub-clause0: negative:难吃
 
 
 
+不错的
+[pair('不错', 'a'), pair('的', 'uj')]
+
+不错的
+Score:1.0
+Sub-clause0: positive:不错 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '不错', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不错的
+[pair('不错', 'a'), pair('的', 'uj')]
+
+不错的
+Score:1.0
+Sub-clause0: positive:不错 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '不错', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不错的
+[pair('不错', 'a'), pair('的', 'uj')]
+
+不错的
+Score:1.0
+Sub-clause0: positive:不错 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '不错', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+还行
+[pair('还行', 'ad')]
+
+还行
+Score:1.0
+Sub-clause0: positive:还行 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '还行', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+还行
+[pair('还行', 'ad')]
+
+还行
+Score:1.0
+Sub-clause0: positive:还行 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '还行', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+还行
+[pair('还行', 'ad')]
+
+还行
+Score:1.0
+Sub-clause0: positive:还行 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '还行', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+还不错的
+[pair('还', 'd'), pair('不错', 'a'), pair('的', 'uj')]
+
+还不错的
+Score:1.5
+Sub-clause0: positive:还1-不错 
+{'score': 1.5, 'su-clause0': {'score': 1.5, 'positive': [{'key': '不错', 'adverb': [{'key': '还', 'position': 1, 'value': 1.5}], 'denial': [], 'value': 1.0, 'score': 1.5}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+还不错的
+[pair('还', 'd'), pair('不错', 'a'), pair('的', 'uj')]
+
+还不错的
+Score:1.5
+Sub-clause0: positive:还1-不错 
+{'score': 1.5, 'su-clause0': {'score': 1.5, 'positive': [{'key': '不错', 'adverb': [{'key': '还', 'position': 1, 'value': 1.5}], 'denial': [], 'value': 1.0, 'score': 1.5}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+还不错的
+[pair('还', 'd'), pair('不错', 'a'), pair('的', 'uj')]
+
+还不错的
+Score:1.5
+Sub-clause0: positive:还1-不错 
+{'score': 1.5, 'su-clause0': {'score': 1.5, 'positive': [{'key': '不错', 'adverb': [{'key': '还', 'position': 1, 'value': 1.5}], 'denial': [], 'value': 1.0, 'score': 1.5}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
