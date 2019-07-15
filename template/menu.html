@@ -39,6 +39,7 @@
             var param = text.split("?");
             var Name = decodeURIComponent(param[1].split("=")[1]);
             var Price = decodeURIComponent(param[2].split("=")[1]);
+            var ID = decodeURIComponent(param[3].split("=")[1]);
 
             var url = "../menu?name="+Name+"?price="+Price;
             //var Name = GetCookieByName("name");
@@ -53,21 +54,22 @@
 
             $.ajax({
             url:"http://127.0.0.1:8000/getComment/",
-            data:{id: 1,
+            data:{id: ID,
                    url: url},
             type: "POST",
              datatype:"json",
                 success: function (data) {
-                alert("WDNMD");
+                {#alert("WDNMD");#}
                 comment=JSON.parse(data.comment)
                 alert("comment = "+comment);
                 var tableData="<tr>";
                     for(var i=0;i<comment.length;i++){
-                        alert(comment.length);
+                        {#alert(comment.length);#}
                         tableData+="<tr>"+"<td>"+comment[i]+"</td>"+"</tr>";
                     }
                     tableData+="</tr>";
                     $("#tbody1").html(tableData);
+                    $("#score").html(data.score);
             },
                 error:function(data){
                 alert("ERROR");
@@ -106,6 +108,9 @@
         <p>配方：新鲜大白菜 + 地沟油</p>
         <div id="price"> </div>
     </div>
+</div>
+<div>
+    综合评分：<span id="score"></span>
 </div>
 <div>
     赞:<button id="btn_zan">0</button>

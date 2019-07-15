@@ -52,6 +52,7 @@
             var param = text.split("?");
             var price = decodeURIComponent(param[1].split("=")[1]);
             var Order = decodeURIComponent(param[2].split("=")[1]);
+            var OrderAbbre= decodeURIComponent(param[3].split("=")[1]);
             $("#Order").text(Order);
             $("#OrderList").text(price);
             </script>
@@ -61,7 +62,7 @@
         <a href="#"><img src="../static/image/menu/Zhifubao1.jpg" title="name" /></a>
     </div>
     <div>
-        <button type="button" onclick="save_the_menu()">支付成功</button>
+        <button type="button" onclick=" GetWaitingNum()">支付成功</button>
         <button type="button " onclick="abondon()">放弃支付</button>
     </div>
 </body>

@@ -1,6 +1,6 @@
 import sqlite3
 def init_DB():
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     c.execute('''
     CREATE TABLE ADMIN
@@ -12,11 +12,11 @@ def init_DB():
     conn.commit()
     conn.close()
 
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     c.execute('''
     CREATE TABLE comment
-    (orderID number unique,
+    (userID number not null,
     mealID number not null,
     evaluate varchar,
     grade number)
@@ -24,7 +24,7 @@ def init_DB():
     conn.commit()
     conn.close()
 
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     c.execute('''
         CREATE TABLE Emp
@@ -36,7 +36,7 @@ def init_DB():
     conn.commit()
     conn.close()
 
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     c.execute('''
         CREATE TABLE Menu
@@ -51,7 +51,7 @@ def init_DB():
     conn.commit()
     conn.close()
 
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     c.execute('''
         CREATE TABLE OrderList
@@ -64,7 +64,7 @@ def init_DB():
     conn.commit()
     conn.close()
 
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     c.execute('''
         CREATE TABLE Store
@@ -75,7 +75,7 @@ def init_DB():
     conn.commit()
     conn.close()
 
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     c.execute('''
         CREATE TABLE User
@@ -87,7 +87,7 @@ def init_DB():
     conn.commit()
     conn.close()
 
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     c.execute('''
         CREATE TABLE SequenceNum
@@ -97,7 +97,7 @@ def init_DB():
     conn.close()
 
 def ShowAdmin():
-    conn = sqlite3.connect('DataBase.db')
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
     sql="select name from sqlite_master where type='table' order by name"
     cursor=c.execute(sql)
@@ -106,7 +106,7 @@ def ShowAdmin():
     conn.close()
 
 def ShowComment():
-    conn = sqlite3.connect('DataBase.db')
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
     cursor=c.execute(''' select * from comment''')
     for row in c:
@@ -125,7 +125,7 @@ Store:根据storeID更改number
 '''
 ##############################################################################
 def InsertAdmin(adminID,pwd,aname,adtel):
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     sql='''insert into ADMIN(adminID,pwd,aname,adtel)
             VALUES (?,?,?,?)'''
@@ -134,18 +134,18 @@ def InsertAdmin(adminID,pwd,aname,adtel):
     conn.commit()
     conn.close()
 
-def Insertcomment(orderID,mealID,evaluate,grade):
-    conn=sqlite3.connect("DataBase.db")
+def Insertcomment(userID,mealID,evaluate,grade):
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
-    sql='''insert into comment(orderID,mealID,evaluate,grade)
+    sql='''insert into comment(userID,mealID,evaluate,grade)
             VALUES (?,?,?,?)'''
-    para=(orderID,mealID,evaluate,grade)
+    para=(userID,mealID,evaluate,grade)
     c.execute(sql,para)
     conn.commit()
     conn.close()
 
 def InsertEmp(empID,ename,etel,password):
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     sql='''insert into Emp(empID,ename,etel,password)
             VALUES (?,?,?,?)'''
@@ -155,7 +155,7 @@ def InsertEmp(empID,ename,etel,password):
     conn.close()
 
 def InsertMenu(mealID,manme,empID,price,picture,grade,element):
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     sql='''insert into Menu(mealID,manme,empID,price,picture,grade,element)
             VALUES (?,?,?,?,?,?,?)'''
@@ -165,7 +165,7 @@ def InsertMenu(mealID,manme,empID,price,picture,grade,element):
     conn.close()
 
 def InsertOrderList(orderID,takeID,mealID,userID,state):
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     sql='''insert into OrderList(orderID,takeID,mealID,userID,state)
             VALUES (?,?,?,?,?)'''
@@ -175,7 +175,7 @@ def InsertOrderList(orderID,takeID,mealID,userID,state):
     conn.close()
 
 def InsertUser(userID,uname,tel,password):
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     sql='''insert into User(userID,uname,tel,password)
             VALUES (?,?,?,?)'''
@@ -185,7 +185,7 @@ def InsertUser(userID,uname,tel,password):
     conn.close()
 
 def InsertSequenceNum(num):
-    conn=sqlite3.connect("DataBase.db")
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c=conn.cursor()
     sql='''insert into SequenceNum(num)
             VALUES (?)'''
@@ -194,43 +194,63 @@ def InsertSequenceNum(num):
     conn.commit()
     conn.close()
 
+def InsertStore(storeID,number):
+    conn=sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
+    c=conn.cursor()
+    sql='''insert into Store(storeID,number)
+            VALUES (?,?)'''
+    para=storeID,number
+    c.execute(sql,para)
+    conn.commit()
+    conn.close()
+
 def UpdateAdmin(adminID,pwd):
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update ADMIN set pwd='%s' where adminID='%s'"%(pwd,adminID))
     conn.commit()
     conn.close()
 
-def Updatecomment(mealID,evaluate,grade):
-    conn = sqlite3.connect("DataBase.db")
+def Updatecomment(evaluate,mealID,grade):
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
-    cursor=c.execute("update comment set evaluate='%s',grade='%s' where mealID='%s'"%(evaluate,grade,mealID))
+    cursor=c.execute("update comment set evaluate='%s',grade='%s' where mealID='%s' and grade='%s'"%(evaluate,grade,mealID,"-1"))
     conn.commit()
     conn.close()
 
 def UpdateMenu(mealID,grade):
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update Menu set grade='%s' where mealID='%s'"%(grade,mealID))
     conn.commit()
     conn.close()
 
 def UpdateOrderList(orderId,state):
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
     cursor=c.execute("update OrderList set state='%s' where orderID='%s'"%(state,orderId))
     conn.commit()
     conn.close()
 
 def UpdateStore(storeID,number):
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
+    cursor1=c.execute("select number from Store where storeID='%s'"%(storeID))
+    temp=""
+    for row in c:
+        temp=row
+    number=int(temp[0])+int(number)
+    print(number)
+    if(number<0):
+        return number,storeID
     cursor=c.execute("update Store set number='%s' where storeID='%s'"%(number,storeID))
     conn.commit()
     conn.close()
+    return number, storeID
+
 
 def SelectUser(uname):
-    conn = sqlite3.connect('DataBase.db')
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
     cursor = c.execute("select * from User where uname='%s'" % (uname))
     temp = ""
@@ -239,7 +259,7 @@ def SelectUser(uname):
     conn.close()
     return temp
 def GetUserNum():
-    conn = sqlite3.connect('DataBase.db')
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
     cursor = c.execute("select count(uname) from User")
 
@@ -247,14 +267,14 @@ def GetUserNum():
     return  result[0]
 
 def GetOrderListNum():
-    conn = sqlite3.connect('DataBase.db')
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
     cursor = c.execute("select count(orderID) from OrderList")
     result=cursor.fetchone()
     print(result[0])
-
-def GetOrderList(state):
-    conn = sqlite3.connect('DataBase.db')
+    return result[0]
+def GetOrderList1(state):
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
     cursor = c.execute("select * from OrderList where state='%s'" % (state))
     temp = []
@@ -262,35 +282,82 @@ def GetOrderList(state):
         temp.append(row)
     conn.close()
     return temp
+def GetOrderList2(orderID):
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select * from OrderList where orderID='%s'" % (orderID))
+    temp = []
+    for row in c:
+        temp.append(row)
+    conn.close()
+    return temp
+
 
 def GetComment(mealID):
-    conn = sqlite3.connect('DataBase.db')
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
     cursor = c.execute("select * from comment where mealID='%s'" % (mealID))
     temp1=[]
     for row in c:
-        lalala=[row[2]]
+        lalala=[row[2],row[3]]
         temp1.append(lalala)
     conn.close()
     print(temp1)
     return temp1
 
+
+
+
 def GetSequenceNum( ):
-    conn = sqlite3.connect('DataBase.db')
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
     c = conn.cursor()
-    cursor = c.execute("select * from SequenceNum")
+    cursor = c.execute("select num from  SequenceNum")
     temp1=[]
     for row in c:
         temp1.append(row[0])
     conn.close()
 
-    conn = sqlite3.connect("DataBase.db")
+    conn = sqlite3.connect("E:\Pycharm\workspace\FoodOrder-master\DataBase.db")
     c = conn.cursor()
-    cursor=c.execute("update SequenceNum set num='%s'"%(temp1[0]+1))
+    cursor=c.execute("update SequenceNum set num='%s'where num='%s'" %(temp1[0]+1,temp1[0]))
     conn.commit()
     conn.close()
     return temp1[0]
 
+def test():
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
+    c = conn.cursor()
+    # cursor = c.execute("delete from  SequenceNum")
+    cursor=c.execute("select num from SequenceNum")
+    temp1=[]
+    for row in c:
+        temp1.append(row[0])
+    conn.close()
+    print(temp1[0])
+
+def GetComment2():
+    conn = sqlite3.connect('E:\Pycharm\workspace\FoodOrder-master\DataBase.db')
+    c = conn.cursor()
+    cursor = c.execute("select * from comment")
+    temp1=[]
+    for row in c:
+        temp1.append(row)
+    conn.close()
+    print(len(temp1))
+    return temp1
+
+def calScore(mealID):
+    grade=90
+    temp1=GetComment(mealID)
+    for each in temp1:
+        if(each[1]==0):
+            grade=grade-1
+        else:
+            grade = grade +1
+            if(grade>=100):
+                grade=100
+    UpdateMenu(mealID,grade=grade)
+    return grade
 
 if __name__=="__main__":
     # init_DB()
@@ -298,18 +365,41 @@ if __name__=="__main__":
     # InsertAdmin(1,"12345","MashiroCl","1234556")
     # InsertEmp()
     # temp=SelectUser("MashiroCl")
-    # InsertOrderList("3","3","lalqweala","asd","waiting")
+    # InsertOrderList("2","3","lalqweala","asd","waiting")
+    # InsertOrderList()
     # UpdateOrderList("1","cooked")
     # InsertUser(GetUserNum()+1,"Mashiro","123456789","123456789")
-    print(GetUserNum())
+    # print(GetUserNum())
     # GetOrderListNum()
-    # Insertcomment("2","2","不好吃啊","59")
+    # Insertcomment("2","2","不好吃啊","-1")
     # GetComment(2)
-    # temp=GetOrderList("waiting")
+    # temp=GetOrderList1(state="waiting")
+    # temp2=GetOrderList2(orderID=1)
+    # print(temp)
+    # print(temp2)
     # print(temp)
     # print(len(temp))
     # ShowAdmin()
     # ShowComment()
-    # InsertSequenceNum("1")
     # SequenceNum=GetSequenceNum()
     # print(SequenceNum)
+    # GetSequenceNum()
+    # test()
+    # InsertStore("1",10)
+    # InsertStore("2",10)
+    # InsertStore("3",10)
+    # InsertStore("4",10)
+    # UpdateStore("1",10)
+    # UpdateStore("2",10)
+    # print(GetOrderList1("finished"))
+    # Insertcomment("1","1","好吃",0)
+    # Insertcomment("2","1","不好吃",0)
+    # Insertcomment("3","1","土豆丝好咸",0)
+    # Insertcomment("4","1","好甜",0)
+    # init_DB()
+    # InsertSequenceNum("1")
+    # Updatecomment("1","好吃","-1")
+    # temp1=GetComment2()
+    GetComment2()
+    # print(temp1)
+    pass

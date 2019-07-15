@@ -7,16 +7,16 @@ from jieba import posseg
 import datetime
 from spa.corpus import WaimaiCorpus
 from sklearn.externals import joblib
-
+import DataBase
 
 # ################################################
 # classifier based on sentiment f_dict
 # ################################################
 class DictClassifier:
     def __init__(self):
-        self.__root_filepath = "f_dict/"
+        self.__root_filepath = r"E:/Pycharm/workspace/FoodOrder-master/spa/f_dict/"
 
-        jieba.load_userdict("f_dict/user.dict")  # 准备分词词典
+        jieba.load_userdict(r"E:/Pycharm/workspace/FoodOrder-master/spa/f_dict/user.dict")  # 准备分词词典
 
         # 准备情感词典词典
         self.__phrase_dict = self.__get_phrase_dict()
@@ -505,7 +505,8 @@ class SVMClassifier:
         self.clf.fit(train_vectors, np.array(train_labels))
 
         #save model
-        joblib.dump(self,'../saved_model/waimai.pkl')
+        self.__module__="thing"
+        joblib.dump(self,'E:\Pycharm\workspace\FoodOrder-master\saved_model\waimai.pkl')
 
         print("SVMClassifier trains over!")
 
@@ -545,25 +546,52 @@ class SVMClassifier:
                         "%Y-%m-%d-%H-%M-%S"))
 
         self.write(filepath, classify_labels, 2)
+def classifyComment(type,mealID):
+    if type=="1":
+        svm = joblib.load("E:\Pycharm\workspace\FoodOrder-master\saved_model\waimai.pkl")
+        print(mealID)
+        temp1=DataBase.GetComment(mealID)
+        print(temp1)
+        for each in temp1:
+            print(each[1])
+            if(each[1]==-1 or each[1]=="-1"):
+                print("--------------------------------------")
+                score=svm.classify(each[0])
+                DataBase.Updatecomment(mealID,each[0],score)
+    elif type=="2":
+        d = DictClassifier()
+        temp1 = DataBase.GetComment(mealID)
+        print(temp1)
+        for each in temp1:
+            print(each[1])
+            if (each[1] == -1 or each[1] == "-1"):
+                print("--------------------------------------")
+                result = d.analyse_sentence(each[0], runout_filepath="hyoupannokeka.txt", print_show=True)
+                print(result)
+                DataBase.Updatecomment(each[0],mealID,result)
 
+
+
+def start():
+    classifyComment("1")
 
 if __name__=='__main__':
-    '''利用情感词典的情感极性分析'''
-
-    '''单个句子'''
-    d = DictClassifier()
-    a_sentence = "剁椒鸡蛋好咸,土豆丝不好吃"
-    result = d.analyse_sentence(a_sentence,runout_filepath="hyoupannokeka.txt",print_show=True)
-    #print(result)
-
-    '''文件分析'''
-    # d=DictClassifier()
-    # d.analysis_file(f
-    # ilepath_in="../hyoupan.txt",filepath_out="../hyoupannokeka.txt")
-
-    '''利用svm进行分析'''
-
-    '''训练模型'''
+#     '''利用情感词典的情感极性分析'''
+#     #
+#     # '''单个句子'''
+#     # d = DictClassifier()
+#     # a_sentence = "剁椒鸡蛋好咸,土豆丝不好吃"
+#     # result = d.analyse_sentence(a_sentence,runout_filepath="hyoupannokeka.txt",print_show=True)
+#     # #print(result)
+#
+#     '''文件分析'''
+#     # d=DictClassifier()
+#     # d.analysis_file(f
+#     # ilepath_in="../hyoupan.txt",filepath_out="../hyoupannokeka.txt")
+#
+#     '''利用svm进行分析'''
+#
+    # '''训练模型'''
     # type_ = "waimai"
     # train_num = 3000
     # test_num = 1000
@@ -580,12 +608,11 @@ if __name__=='__main__':
     # best_words = fe.best_words(feature_num)
     #
     # svm=SVMClassifier(train_data,train_labels,best_words,C)
-    #
-    # '''利用模型进行分析'''
-    # svm=joblib.load("../saved_model/waimai.pkl")
-    # print(svm.classify("没以前好吃了"))
-    # print(svm.classify("超好吃"))
-
-
-
+#     #
+#     # '''利用模型进行分析'''
+    svm=joblib.load("../saved_model/waimai.pkl")
+    print(svm.classify("没以前好吃了"))
+#     # print(svm.classify("超好吃"))
+#     classifyComment("1")
+#     # print(DataBase.ShowAdmin())
 

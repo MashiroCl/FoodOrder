@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用餐评价</title>
+    <script src="../static/js/jquery.min.js"></script>
+    <script src="../static/js/jquery-3.0.0.min.js"></script>
+    <script src="../static/js/jquery.params.js"></script>
+
+   <script>
+ var dict = [];
+ var userID;
+    function sasaki() {
+    alert(dict);
+    alert("Now is submitting!");
+ var comdata =[userID];
+ alert(dict);
+ for (var i=0;i<dict.length;i++)
+ {
+     comdata.push(dict[i]);
+     comdata.push($("#input"+dict[i]).val());}
+
+    alert("Waiting...");
+    $.ajax({
+        url:"http://127.0.0.1:8000/getCommentFromCus/",
+        traditional:true,
+        data:{comdata:comdata},
+        type: "POST",
+        datatype:"json",
+        success: function (data) {
+            alert("感谢您的评价！");
+            order=JSON.parse(data.order);
+            alert("order = "+order);
+            $(window).attr("location","../news")
+
+        },
+        error:function(data){
+            alert("网络错误，请稍后重试");
+            alert(data);
+        }
+    });
+    alert("!!!!!!!!!!!!!!!!!!!!!!");
+
+}
+         $(function() {
+             alert("Start!");
+             alert("Here!");
+             var text = window.location.search;
+             var param = text.split("?");
+             userID = decodeURIComponent(param[1].split("=")[1]);
+             var orderAbbre = decodeURIComponent(param[2].split("=")[1]);
+
+             alert("orderAbbre" + orderAbbre);
+             {#var orderNum=string.split(',')[0];#}
+             var temp = orderAbbre.split(',');
+             {#alert(orderNum)#}
+             alert(orderAbbre.length);
+
+             for (var i = 0; i < (orderAbbre.length) / 3 - 1; i++) {
+                 orderNum = temp[i].split("_")[0];
+                 dict.push(orderNum);
+             }
+             alert(dict);
+
+             var comNum = 0;
+             var src1 = "";
+             var src2 = "";
+             var src3 = "";
+             var name1 = "";
+             var name2 = "";
+             var name3 = "";
+
+             /////
+             {#for (var i = 0; i < 2; i++)#}
+             {#{#}
+             {#    var input = document.createElement('input');#}
+             {#    var tr = document.createElement('tr');#}
+             {#    var td = document.createElement('td');#}
+             {#    td.appendChild(input);#}
+             {#    tr.appendChild(td);#}
+             {#    document.getElementById('table').appendChild(tr);}#}
+             ////
+             comNum = dict.length;
+             alert("comNum" + comNum);
+             {#if(d1 > 0){#}
+             {#    //comNum++;#}
+             {#    src1 = "C:/Users/Neil/Desktop/大三下/小学期/dlut-order/image/menu/d1.jpg";#}
+             {#    name1 = "油炸大白菜";}#}
+             {#if (d2 > 0){#}
+             {#    comNum++;#}
+             {#    src2 = "../static/image/menu/d2.jpg";#}
+             {#    name2 = "馒头蘸红糖";}#}
+             {#if(d3 > 0){#}
+             {#    comNum++;#}
+             {#    src3 = "../static/image/menu/d3.jpg";#}
+             {#    name3 = "炖石头";}#}
+
+             var tableData = "";
+             for(var i = 0;i <comNum;i++)
+             {
+                 tableData += "<tr>" + "<td>" +
+                     "<img src='src" + i + "' name='name" + i +"'>" + "</td>" + "</tr>";
+                 tableData += "<tr>" + "<td>" + "" + "</td>" + "<td>" +
+                     "<textarea id='input" +dict[i] + "' placeholder='请输入' cols='80' rows='8'></textarea>" + "</td>" + "<td>" + "</td>" + "</tr>";}
+
+             tableData += "<tr>" + "<td>" +
+                 "<button id='btn' onclick='sasaki()'>提交</button>" + "</td>" + "</tr>";
+             tableData += "";
+
+             $("#himawari").html(tableData);
+             alert("There!");
+         });
+
+    </script>
+</head>
+<body>
+
+<h3>欢迎留下您的宝贵评价！</h3>
+    <table>
+        <tbody id="himawari"></tbody>
+    </table>
+
+
+</body>
+</html>

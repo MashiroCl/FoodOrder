@@ -42,12 +42,28 @@
                 //document.cookie = "name="+name;
                 //document.cookie = "price="+price;
                 alert(price);
-				jump1(name, price);
+				jump1(name, price,1);
+			});
+
+				$("#pic2").on("click",function(){
+                var name = $("#name2").text();
+                var price = $("#price2").text();
+                alert(name);
+                alert(price);
+				jump1(name, price,2);
+			});
+
+				$("#pic3").on("click",function(){
+                var name = $("#name3").text();
+                var price = $("#price3").text();
+                alert(name);
+                alert(price);
+				jump1(name, price,3);
 			});
 
 		});
-        function jump1(name, price){
-            let url = "../menu?name="+name+"?price="+price;//此处拼接内容
+        function jump1(name, price,id){
+            let url = "../menu?name="+name+"?price="+price+"?id="+id;//此处拼接内容
             window.location.href = url;
         }
 		</script>
@@ -131,10 +147,10 @@
 					</div>
 					<div class="recent-news-grid">
 						<div class="recent-news-grid-left">
-							<a href="#"><img src="../static/image/menu/d2.jpg" title="name" /></a>
+                            <img src="../static/image/menu/d2.jpg" id="pic2" />
 						</div>
 						<div class="recent-news-grid-right">
-							<p>馒头蘸红糖</p>
+							<p id="name2">馒头蘸红糖</p>
 							<p>大量使用新型漂白粉和染色剂</p>
 							<p id="price2">
 								单价：11元
@@ -149,10 +165,10 @@
 					</div>
 					<div class="recent-news-grid">
 						<div class="recent-news-grid-left">
-							<a href="#"><img src="../static/image/menu/d3.jpg" title="name" /></a>
+                            <img src="../static/image/menu/d3.jpg" id="pic3" />
 						</div>
 						<div class="recent-news-grid-right">
-							<p>炖石头</p>
+							<p id="name3">炖石头</p>
 							<p>原料来自学校旧旱厕的奠基石</p>
 							<p id="price3">
 								单价：12元

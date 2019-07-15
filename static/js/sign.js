@@ -51,7 +51,7 @@
                 }).done(function (data) {    //回调函数获取的data就是view返回的json数据
                     if (data.res === 0) {
                         location.href = '/sign/';
-                        alert("我叼你妈的输错了啊");
+                        alert("用户名密码不匹配");
                     } else {
                         // alert('注册成功');
                         let url = "../news?id="+username;//此处拼接内容

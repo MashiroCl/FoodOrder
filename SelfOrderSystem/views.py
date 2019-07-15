@@ -4,18 +4,20 @@ from django.http import HttpResponse
 import DataBase
 from django.http import JsonResponse
 import json
-
+from spa.classifiers import SVMClassifier,classifyComment,DictClassifier
+from sklearn.externals import joblib
 def test(request):
-    # username=request.POST.get('username')
-    # print(username)
-    # dict=""
-    # return HttpResponse("牵牛花与加濑同学")
-    # data={}
-    data= DataBase.GetOrderList("waiting")
-    # data={}
-    # data['data']='frick'
-    return render_to_response('login.html',{'data':data})
-    # return render_to_response('login.html')
+#     # username=request.POST.get('username')
+#     # print(username)
+#     # dict=""
+#     # return HttpResponse("牵牛花与加濑同学")
+#     # data={}
+#     # data= DataBase.GetOrderList("waiting")
+#     # data={}
+#     # data['data']='frick'
+#     classifiers.start()
+#     return render_to_response('login.html',{'data':data})
+    return render_to_response('login.html')
 
 def test1(request):
     data = DataBase.GetOrderList("waiting")
@@ -100,32 +102,111 @@ def news(request):
 def Settlement(request):
     return render_to_response("Settlement.html")
 
+def comment(request):
+    return render_to_response("comment.html")
 
 def getComment(request):
-    id=request.POST.get("id")
+    mealid=request.POST.get("id")
     url=request.POST.get("url")
-    print(id)
+    print(mealid)
     print(url)
-    comment =DataBase.GetComment(mealID=2);
+    comment =DataBase.GetComment(mealID=mealid);
     print(comment)
     comment=json.dumps(comment)
-    comment=JsonResponse({"comment":comment})
+
+    score=DataBase.calScore(mealID=mealid)
+    comment=JsonResponse({"comment":comment,"score":score})
     return comment
 
 def getOrder(request):
     order=DataBase.GetOrderList('waiting')
 
 def PayEnd(request):
-    order=request.POST.get("order")
-    price=request.POST.get("price")
-    DataBase.InsertOrderList(DataBase.GetOrderListNum()+1,DataBase.GetSequenceNum(),order," ","waiting")     #UserID没有
+    return render_to_response("waiting.html")
+
+def PayEndProcess(request):
+    print("PayEndProcess here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    userID=request.POST.get("id")
+    meal=request.POST.get("dish")
+    # temp_meal=meal.splite(",")
+
+    # for each in
+
+
+    orderNum=DataBase.GetOrderListNum()+1
+    sequenceNum=DataBase.GetSequenceNum()
+
+    DataBase.InsertOrderList(orderNum,sequenceNum,meal,userID,"waiting")
+    return JsonResponse({'orderNum': orderNum,'waitingNum':sequenceNum})                  #返回的orderNum放到url,付完款跳转到取餐完成评价界面
+
+
 
 def Kitchen(request):
     return render_to_response("Kitchen.html")
 
+
 def KitchenGetOrder(request):
-    order=DataBase.GetOrderList("waiting")
+    order=DataBase.GetOrderList1("waiting")
     order=json.dumps(order)
     order=JsonResponse({"order":order})
 
     return order
+
+def checkStore(request):
+    dish=request.POST.getlist("dish")
+    dishNum=request.POST.getlist("dishNum")
+    print(dish)
+    print(dishNum)
+    number=[]
+    storeId=[]
+    for i in range(len(dish)):
+        temp1,temp2=DataBase.UpdateStore(dish[i],-int(dishNum[i]))
+        number.append(temp1)
+        storeId.append(temp2)
+    print(number)
+    print(storeId)
+    numberMinus=[]
+    for i in range(len(number)):
+        if number[i]<0:
+            numberMinus.append(storeId[i])
+
+    numberMinus = json.dumps(numberMinus)
+    numberMinus = JsonResponse({"numberMinus": numberMinus})
+    return numberMinus
+
+def KitchenFinished(request):
+    orderNum=request.POST.get("orderNum")
+    print(orderNum)
+    DataBase.UpdateOrderList(orderNum,"finished")
+    return HttpResponse("finished")
+
+def FoodDelivered(request):
+    orderNum=request.POST.get("orderNum")  #订单号
+    DataBase.UpdateOrderList(orderNum,"finished")
+
+def getCommentFromCus(request):
+    print("getCommentFromCus")
+    temp=request.POST.getlist("comdata")
+    print("?????????????????")
+    print(temp[2])
+    userID=temp[0]
+    dish=[]
+    dishComment=[]
+    i=0
+    while i < len(temp):
+        if(i==0):
+            i=i+1
+        else:
+            dish.append(temp[i])
+            print(dish)
+            i=i+1
+            print(i)
+            dishComment.append(temp[i])
+            print(dishComment)
+            i=i+1
+
+    for i in range(len(dish)):
+        print(i)
+        DataBase.Insertcomment(userID,dish[i],dishComment[i],-1)
+        classifyComment("2",dish[i])
+    return JsonResponse({'res': 1})

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>请耐心等待出餐</title>
+</head>
+<script src="../static/js/jquery.min.js"></script>
+<script src="../static/js/jquery-3.0.0.min.js"></script>
+<script src="../static/js/jquery.params.js"></script>
+<script>
+
+    
+    //每5秒执行一次myFunction()方法
+    window.setInterval(myFunction, 1000 * 10);
+    var i = 1;
+
+    function myFunction() {
+        console.log("轮训任务=================>" + i++);
+
+        $.ajax({
+            url:"http://127.0.0.1:8000/KitchenFinished/",
+            data:{state: "check"},
+            type: "POST",
+            datatype:"json",
+            success: function (data) {
+                alert("SUCCESS");
+                order=JSON.parse(data.order);
+                alert("order = "+order);
+            },
+            error:function(data){
+                alert("FAIL");
+                alert(data)
+
+            }
+        });
+    }
+</script>
+<body>
+<h3>您的取餐号是：<span id="Num"></span></h3>
+<button onclick="getMeal()">确认取餐</button>
+<script>
+    let text = window.location.search;
+    let param = text.split("?");
+    let waitingNum = decodeURIComponent(param[1].split("=")[1]);
+    let orderAbbre=decodeURIComponent(param[3].split("=")[1]);
+    alert(waitingNum+"hao!!!!!!!");
+    $("#Num").html(waitingNum);
+</script>
+<script>
+    function getMeal() {
+        let text = window.location.search;
+        let param = text.split("?");
+        let userID = decodeURIComponent(param[2].split("=")[1]);
+        let d1 = decodeURIComponent(param[3]);
+        let d2 = decodeURIComponent(param[4]);
+        let d3 = decodeURIComponent(param[5]);
+        let url = "../comment?userId="+ userID +"?orderAbbre="+orderAbbre;
+        window.location.href = url;
+    }
+</script>
+</table>
+</body>
+</html>

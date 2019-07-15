@@ -1,0 +1,510 @@
+不好吃
+[pair('不', 'd'), pair('好吃', 'v')]
+
+不好吃
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好咸
+[pair('好', 'a'), pair('咸', 'a')]
+
+好咸
+Score:1.0
+Sub-clause0: positive:好 negative:咸 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}], 'negative': [{'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好咸
+[pair('好', 'a'), pair('咸', 'a')]
+
+好咸
+Score:1.0
+Sub-clause0: positive:好 negative:咸 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}], 'negative': [{'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好咸
+[pair('好', 'a'), pair('咸', 'a')]
+
+好咸
+Score:1.0
+Sub-clause0: positive:好 negative:咸 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}], 'negative': [{'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好苦
+[pair('好', 'a'), pair('苦', 'a')]
+
+好苦
+Score:3.0
+Sub-clause0: positive:好 苦 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '苦', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+3
+[pair('3', 'x')]
+
+3
+Score:0
+Sub-clause0: 
+{'score': 0, 'su-clause0': {'score': 0, 'positive': [], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好吃
+[pair('不', 'd'), pair('好吃', 'v')]
+
+不好吃
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好吃
+[pair('不', 'd'), pair('好吃', 'v')]
+
+不好吃
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好吃啊
+[pair('不', 'd'), pair('好吃', 'v'), pair('啊', 'zg')]
+
+不好吃啊
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好次
+[pair('不好', 'd'), pair('次', 'q')]
+
+不好次
+Score:-3.0
+Sub-clause0: negative:不好 次 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [], 'negative': [{'key': '不好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '次', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+4
+[pair('4', 'x')]
+
+4
+Score:0
+Sub-clause0: 
+{'score': 0, 'su-clause0': {'score': 0, 'positive': [], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+难吃
+[pair('难吃', 'a')]
+
+难吃
+Score:-1.0
+Sub-clause0: negative:难吃 
+{'score': -1.0, 'su-clause0': {'score': -1.0, 'positive': [], 'negative': [{'key': '难吃', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好吃
+[pair('不', 'd'), pair('好吃', 'v')]
+
+不好吃
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+难吃
+[pair('难吃', 'a')]
+
+难吃
+Score:-1.0
+Sub-clause0: negative:难吃 
+{'score': -1.0, 'su-clause0': {'score': -1.0, 'positive': [], 'negative': [{'key': '难吃', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好吃
+[pair('不', 'd'), pair('好吃', 'v')]
+
+不好吃
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+难吃
+[pair('难吃', 'a')]
+
+难吃
+Score:-1.0
+Sub-clause0: negative:难吃 
+{'score': -1.0, 'su-clause0': {'score': -1.0, 'positive': [], 'negative': [{'key': '难吃', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好吃
+[pair('不', 'd'), pair('好吃', 'v')]
+
+不好吃
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常不好吃
+[pair('非常', 'd'), pair('不', 'd'), pair('好吃', 'v')]
+
+非常不好吃
+Score:-5.25
+Sub-clause0: positive:不1-非常2-好吃 
+{'score': -5.25, 'su-clause0': {'score': -5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 2, 'value': 1.75}], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常不好吃
+[pair('非常', 'd'), pair('不', 'd'), pair('好吃', 'v')]
+
+非常不好吃
+Score:-5.25
+Sub-clause0: positive:不1-非常2-好吃 
+{'score': -5.25, 'su-clause0': {'score': -5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 2, 'value': 1.75}], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常不好吃
+[pair('非常', 'd'), pair('不', 'd'), pair('好吃', 'v')]
+
+非常不好吃
+Score:-5.25
+Sub-clause0: positive:不1-非常2-好吃 
+{'score': -5.25, 'su-clause0': {'score': -5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 2, 'value': 1.75}], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好好吃
+[pair('好', 'a'), pair('好吃', 'v')]
+
+好好吃
+Score:5.0
+Sub-clause0: positive:好 好吃 
+{'score': 5.0, 'su-clause0': {'score': 5.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好好吃
+[pair('好', 'a'), pair('好吃', 'v')]
+
+好好吃
+Score:5.0
+Sub-clause0: positive:好 好吃 
+{'score': 5.0, 'su-clause0': {'score': 5.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+非常好吃
+[pair('非常', 'd'), pair('好吃', 'v')]
+
+非常好吃
+Score:5.25
+Sub-clause0: positive:非常1-好吃 
+{'score': 5.25, 'su-clause0': {'score': 5.25, 'positive': [{'key': '好吃', 'adverb': [{'key': '非常', 'position': 1, 'value': 1.75}], 'denial': [], 'value': 3.0, 'score': 5.25}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好吃
+[pair('好吃', 'v')]
+
+好吃
+Score:3.0
+Sub-clause0: positive:好吃 
+{'score': 3.0, 'su-clause0': {'score': 3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好好吃
+[pair('好', 'a'), pair('好吃', 'v')]
+
+好好吃
+Score:5.0
+Sub-clause0: positive:好 好吃 
+{'score': 5.0, 'su-clause0': {'score': 5.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好好吃
+[pair('好', 'a'), pair('好吃', 'v')]
+
+好好吃
+Score:5.0
+Sub-clause0: positive:好 好吃 
+{'score': 5.0, 'su-clause0': {'score': 5.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好好吃
+[pair('好', 'a'), pair('好吃', 'v')]
+
+好好吃
+Score:5.0
+Sub-clause0: positive:好 好吃 
+{'score': 5.0, 'su-clause0': {'score': 5.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好好吃
+[pair('好', 'a'), pair('好吃', 'v')]
+
+好好吃
+Score:5.0
+Sub-clause0: positive:好 好吃 
+{'score': 5.0, 'su-clause0': {'score': 5.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '好吃', 'adverb': [], 'denial': [], 'value': 3.0, 'score': 3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+难吃
+[pair('难吃', 'a')]
+
+难吃
+Score:-1.0
+Sub-clause0: negative:难吃 
+{'score': -1.0, 'su-clause0': {'score': -1.0, 'positive': [], 'negative': [{'key': '难吃', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+难吃
+[pair('难吃', 'a')]
+
+难吃
+Score:-1.0
+Sub-clause0: negative:难吃 
+{'score': -1.0, 'su-clause0': {'score': -1.0, 'positive': [], 'negative': [{'key': '难吃', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+难吃
+[pair('难吃', 'a')]
+
+难吃
+Score:-1.0
+Sub-clause0: negative:难吃 
+{'score': -1.0, 'su-clause0': {'score': -1.0, 'positive': [], 'negative': [{'key': '难吃', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+

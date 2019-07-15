@@ -65,17 +65,21 @@ function jump2(){
     var Price_in_total = $("#B11").val()*10 + $("#B21").val()*11 + $("#B31").val()*12 ;//通过id获取文本框对象;
     //document.cookie=Price_in_total
     var temp=" ";
-    
+    var orderAbbre="";
     if(Dish1!=0){
         temp=temp+"油炸大白菜 份数："+Dish1+"\n"
+        orderAbbre=orderAbbre+"1_"+Dish1+",";
     }
     if(Dish2!=0){
         temp=temp+"馒头蘸红糖 份数："+Dish2+"\n"
+        orderAbbre=orderAbbre+"2_"+Dish2+",";
+
     }
     if(Dish3!=0){
         temp=temp+"炖石头 份数："+Dish3+"\n"
+        orderAbbre=orderAbbre+"3_"+Dish3+",";
     }
-    let url1 = "../Settlement/?price="+Price_in_total+"?order="+temp+"?username="+userID;//此处拼接内容
+    let url1 = "../Settlement/?price="+Price_in_total+"?order="+temp+"?username="+userID+"?orderAbbre="+orderAbbre;//此处拼接内容
     window.open(url1);
     //window.location.href = url;
 }
@@ -83,4 +87,31 @@ function Get_OrderList(){
     var res=document.cookie;
     document.getElementById("OrderList").value=res;
     return res;
+}
+
+function GetWaitingNum() {
+    let text = window.location.search;
+    let param = text.split("?");
+    let userID = decodeURIComponent(param[3].split("=")[1]);
+    let orderAbbre=decodeURIComponent(param[4].split("=")[1]);
+
+    $.ajax({
+        url:"http://127.0.0.1:8000/PayEndProcess/",
+        data:{id: userID,
+              dish:orderAbbre},
+        type: "POST",
+        datatype:"json",
+        success: function (data) {
+            alert("正在烹饪中，请耐心等待");
+            waitingNum=JSON.parse(data.waitingNum)
+            var orderNum=JSON.parse(data.orderNum)
+            alert("comment = "+waitingNum);
+            let url = "../waiting?waitingNum="+waitingNum+"?orderNum="+orderNum+"?orderAbbre="+orderAbbre;
+            window.location.href = url;
+        },
+        error:function(data){
+            alert("请重新单击“支付成功”按钮重试");
+
+        }
+    });
 }

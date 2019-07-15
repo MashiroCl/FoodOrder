@@ -32,5 +32,11 @@ urlpatterns = [
     path('KitchenGetOrder/',SelfOrderSystem.views.KitchenGetOrder),
     path('Kitchen/', SelfOrderSystem.views.Kitchen),
     path('signCheck/', SelfOrderSystem.views.signCheck),
+    path('PayEndProcess/', SelfOrderSystem.views.PayEndProcess),
+    path('waiting/', SelfOrderSystem.views.PayEnd),
+    path('comment/', SelfOrderSystem.views.comment),
+    path('checkStore/', SelfOrderSystem.views.checkStore),
+    path('KitchenFinished/', SelfOrderSystem.views.KitchenFinished),
+    path('getCommentFromCus/', SelfOrderSystem.views.getCommentFromCus),
 
 ]
