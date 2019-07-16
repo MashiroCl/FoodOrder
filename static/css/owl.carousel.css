@@ -27,13 +27,13 @@
 	height: 54px;
 }
 .owl-next{
-	background: url(../images/divice-pagenations.png) no-repeat -35px 0px;
+	background: url(../image/divice-pagenations.png) no-repeat -35px 0px;
 	position: absolute;
 	right: -8%;
 	top: 30%;
 }
 .owl-prev{
-	background: url(../images/divice-pagenations.png) no-repeat 0px 0px;
+	background: url(../image/divice-pagenations.png) no-repeat 0px 0px;
 	position: absolute;
 	left: -16.5%;
 	top: 30%;

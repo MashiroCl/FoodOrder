@@ -72,33 +72,12 @@ body a{
 body input[type="text"],body input[type="submit"],body textarea,body input[type="button"],body select,body select option{
 	-webkit-appearance:none;
 }
-/*----start-container----*/
-/*-----start-header----*/
-.header{
-}
-.logo{
-	float: left;
-	margin-top: 0.3em;
-	z-index: 999;
-	position: relative;
-}
-.logo a{
-	color: #303030;
-	font-weight: 200;
-	text-transform: uppercase;
-	font-size: 2.5em;
-}
-.logo a:hover{
-	text-decoration:none;
-}
-.logo320{
-	display:none;
-}
 /*----navbar-nav----*/
 .top-header{
 	padding: 0.8em 0em;
 }
 .top-nav ul li a{
+
 	color: #3b3b3b;
 	padding: 0.2em 1.5em;
 	font-size: 0.9em;
@@ -230,7 +209,7 @@ nav a#pull {
 }
 /*----- banner -----*/
 .banner{
-	background:url(../image/menu/banner.jpg) no-repeat 0px 0px;
+	background:url(../image/home_bg.jpg) no-repeat 0px 0px;
 	background-size:cover;
 	min-height:600px;
 	position:relative;
@@ -264,7 +243,7 @@ nav a#pull {
 	left:23%;
 }
 /*----- menu -----*/
-.menu{
+/*.menu{
 	position:relative;
 } 
 .menu-head{
@@ -276,7 +255,7 @@ nav a#pull {
 	width: 155px;
 	height: 75px;
 	display: inline-block;
-	background: url(../image/menu/menu-bg.png) no-repeat 0px 0px;
+	background: url(../image/dut2.jpg) no-repeat 0px 0px;
 	line-height: 2.5em;
 	font-size: 0.9em;
 }
@@ -286,7 +265,7 @@ nav a#pull {
 	text-align:center;
 }
 /*----- menu-items -----*/
-.menu-page div.menu-menu{
+/*.menu-page div.menu-menu{
 	padding:4em 0 4em 0; 
 }
 .main-menus{
@@ -295,7 +274,7 @@ nav a#pull {
 .main-menus div.item{
 	float:left;
 	width:50%;
-}
+}*/
 .item h3{
 	color: #555555;
 	margin: 0;
@@ -332,7 +311,7 @@ nav a#pull {
 	vertical-align:middle;
 	padding-top:0.5em;
 }
-.menus-left-grid{
+/*.menus-left-grid{
 	margin:0 0 3em 0;
 }
 .menus-left{
@@ -340,7 +319,7 @@ nav a#pull {
 }
 .menus-right{
 	padding-left:5%;
-}
+}*/
 a.loadmore{
 	color: #b7b7b7;
 	border: 1px solid #EEE;
@@ -430,7 +409,7 @@ span.item-rate:hover{
 	padding:2em 0 0 0;
 }
 /*----- gallery -----*/
-.gallery{
+/*.gallery{
 	padding: 5em 0 8em;
 }
 .gallery h3{
@@ -504,7 +483,7 @@ span.item-rate:hover{
 	width:100%;
 }
 /*----*/
-.gallery-grids-right-top-grid h4{
+/*.gallery-grids-right-top-grid h4{
 	color:#FFF;
 	font-size:1.5em;
 }
@@ -519,8 +498,9 @@ span.item-rate:hover{
 	margin-top:1em;
 	text-decoration:none;
 }
-/*----- footer------*/
-.footer{
+/*--*
+/--- footer------*/
+/*.footer{
 	background:#3b3b3b;
 	padding:3em 0;
 }
@@ -552,9 +532,9 @@ span.item-rate:hover{
 }
 .footer-grid ul li a:hover{
 	color:#f34949;
-}
+}*/
 /*----- copy-right ----*/
-.copy-right p{
+/*.copy-right p{
 	font-family: 'aleolight';
 	color:#FFF;
 	line-height:1.8em;
@@ -584,9 +564,9 @@ span.item-rate:hover{
 }
 .copyw3-agile p a:hover{
     color: #f44336;
-}
+}*/
 /*----- menu-page -----*/
-.menu-page{
+/*.menu-page{
 	padding:0 0 5em 0;
 }
 .menu-page h5{
@@ -607,7 +587,7 @@ span.item-rate:hover{
 }
 .menu-header{
 	min-height:100px;
-	background:url(../image/menu/menu-bg.jpg) no-repeat 0px 0px;
+	background:url(../image/dut2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 }
 .menu-header h1{
@@ -619,14 +599,14 @@ span.item-rate:hover{
 }
 .menu-header h1 span{
 	color:#2f3837;
-}
+}*/
 /*------ reservation -----*/
-.reservation{
+/*.reservation{
 	padding:0 0 5em 0;
 }
 .reservation-header{
 	min-height:100px;
-	background:url(../image/menu/menu-bg.jpg) no-repeat 0px 0px;
+	background:url(../image/dut2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 }
 .reservation-header{
@@ -668,8 +648,8 @@ span.item-rate:hover{
 	margin:0.5em auto;
 	text-align:center;
 	line-height:1.8em;
-}
-.make-reserve p{
+}*/
+/*.make-reserve p{
 	text-align:left;
 	width:100%;
 }
@@ -680,7 +660,7 @@ span.item-rate:hover{
 	margin: 0;
 	padding: 0.5em 0;
 	text-transform: uppercase;
-}
+}*/
 .item-setion select{
 	border:1px solid #EEE;
 	padding:0.5em;
@@ -758,7 +738,7 @@ span.item-rate:hover{
 	min-height:300px;
 	resize:none;
 }
-.make-reserve input[type="submit"]{
+/*.make-reserve input[type="submit"]{
 	background:#3b3b3b;
 	color:#FFF;
 	padding:1em 1.5em;
@@ -772,14 +752,14 @@ span.item-rate:hover{
 }
 .make-reserve input[type="submit"]:hover{
 	background:#f34949;
-}
+}*/
 /*---- news -----*/
 .news{
-	padding:0 0 5em 0;
+	padding:0 0 0 0;
 }
 .news-header{
 	min-height:100px;
-	background:url(../image/menu/menu-bg.jpg) no-repeat 0px 0px;
+	background:url(../image/dut2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 }
 .news-header h1{
@@ -839,7 +819,7 @@ span.item-rate:hover{
 }
 .recent-news-grid{
 	margin: 3em 0;
-	border: 1px solid #eee;
+	border: 1px solid #000;
 	padding: 1em;
 }
 a.news-btn{
@@ -860,12 +840,12 @@ a.news-btn:hover{
 	background: #f34949;
 }
 /*---- reviews -----*/
-.reviews{
+/*.reviews{
 	padding:0 0 5em 0;
 }
 .reviews-header{
 	min-height:100px;
-	background:url(../image/menu/menu-bg.jpg) no-repeat 0px 0px;
+	background:url(../image/dut2.jpg) no-repeat 0px 0px;
 	background-size:cover;
 }
 .reviews-header h1{
@@ -968,9 +948,9 @@ a.news-btn:hover{
 label.date-reviws{
 	font-weight:normal;
 	color:#3b3b3b;
-}
+}*/
 /*------ contact -----*/
-.contact{
+/*.contact{
 	padding:0 0 5em 0;
 }
 .contact-header{
@@ -1016,7 +996,7 @@ label.date-reviws{
 	padding:3em 0;
 }
 /*------ contact -----*/
-.contact-head{
+/*.contact-head{
 	text-align:left;
 }
 .contact-head h2{
@@ -1107,7 +1087,7 @@ label.date-reviws{
 }
 .contact-form input[type="submit"]:hover{
 	background: #f34949;
-}
+}*/
 /*----- responsive-design ------*/
 @media(max-width:1280px){
 	.banner-info {

@@ -1,3 +1,12 @@
+.settlement{
+    border-radius: 5px;
+    border: 0;
+    width:100px;
+    height:50px;
+    background-color: #585858;
+    font-size:20px;
+    color:#fff;
+}
 body{
 	margin:0; 
 	font-family: 'Yantramanav', sans-serif;
@@ -29,8 +38,8 @@ body a:hover{
 body a:focus {
     outline: none;
 }
-.banner {
-    background: url(../image/example.jpg) no-repeat center;
+.banner1 {
+    background: url(../image/home_bg.jpg) no-repeat center;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -210,8 +219,7 @@ ul.nav.navbar-nav.navbar-right {
 	top: 190%;  
 }
 .dropdown-menu.columns-3 {
-    min-width:500px; 
-	padding: 25px;
+    padding:25px;
 }
 li.dropdown.open .dropdown-menu,li.w3pages.open .dropdown-menu{ 
 	-webkit-transform:scale(1); 
@@ -220,19 +228,9 @@ li.dropdown.open .dropdown-menu,li.w3pages.open .dropdown-menu{
 	-ms-transform:scale(1); 
     transform:scale(1); 
 } 
-ul.multi-column-dropdown h6 {
-    font-size: 1.4em;
-    color: #08cae2;
-    margin: 0 0 0.5em;
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid #E4E4E4;
-    text-transform: capitalize;
-    font-family: 'Yantramanav', sans-serif;
-    font-weight: 300;
-}
 .multi-column-dropdown li {
     list-style-type: none;
-    margin: 7px 0;
+    margin: 0 0;
 }
 .multi-column-dropdown li a {
     display: block;
@@ -242,6 +240,7 @@ ul.multi-column-dropdown h6 {
     text-decoration: none;
     font-size: 1em;
     line-height: 1.6em;
+    width: 4em;
 }
 .multi-column-dropdown li a:hover{
 	color:#212121 !important;
@@ -331,14 +330,15 @@ option {
 	background: linear-gradient(to bottom, #f1efef 51%,#fd463e  125%);
 }
 .w3ls-add-grids {
-    background: url(../image/home_bg.jpg)no-repeat 0px 0px;
+    background: url(../image/fruit.jpg)no-repeat 0px 0px;
     background-size: cover;
-    width: 45%; 
+    width: 45%;
+    height:90%;
     float: left;
     margin: 0 0 0 2.5em;
 }
 .w3ls-add-grids.w3ls-add-grids-right{
-    background: url(../image/bg.png)no-repeat 0px 0px; 
+    background: url(../image/tofu.jpg)no-repeat 0px 0px; 
 	background-size: cover;
 	text-align: right;
 } 
@@ -368,7 +368,7 @@ option {
     letter-spacing: 2px;
     border: 1px solid #fff;
     display: inline-block;
-    padding: 8px;
+    padding: 5px;
     margin-top: 1em;
 }
 .w3ls-add-grids a h6 {
@@ -472,7 +472,7 @@ img.w3order-img {
 /*-- //order --*/
 /*-- deals --*/  
 .w3agile-deals { 
-    background:url(../image/example.jpg)no-repeat center 0px fixed;
+    background:url(../image/dut2.jpg)no-repeat center 0px fixed;
 	background-size: cover; 
 }
 .w3agile-deals h3.w3ls-title {
@@ -1253,7 +1253,7 @@ input.item_quantity:hover{
 }
 .checkbox input + i:after {
     content: '';
-    background: url("../image/bg.png") no-repeat 4px 3px;
+    background: url("../image/bg-01.jpg") no-repeat 4px 3px;
     top: -1px;
     left: -1px;
     width: 17px;
@@ -2063,7 +2063,7 @@ p.single-price-text {
 /*-- //login --*/
 /*-- offers --*/
 .offers-wthreerow {
-    background: url(../image/black6.jpg)no-repeat 0px;
+    background: url(../image/bg-01.jpg)no-repeat 0px;
     min-height: 350px;
     background-size: 100%;
 }
@@ -3281,10 +3281,11 @@ h3.icon-subheading {
     margin-bottom: 0.8em; 
 }
 .navbar-header.w3l_logo { 
-    width: 55%; 
+    float:left; 
 }
 .w3l_logo h1 {
     font-size: 2.5em;
+    float:left;
 }
 .w3l_logo h1,.w3l_logo h1 a span{ 
     text-align: left;

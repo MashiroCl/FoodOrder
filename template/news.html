@@ -95,24 +95,70 @@
 		</script>
 
 	</head>
-	<body background="../static/image/menu/menu-bg.jpg">
+	<body>
 
-			<div id="home" class="header">
-					<div class="top-header">
-						<div class="container">
-						<div class="logo">
-							<img src="../static/image/logo.png" style="height:80px;width: 80px" alt="" />
-						</div>
-						 <nav class="top-nav">
-							<ul class="top-nav">
+<div class="banner1">
+    <!-- header -->
+    <div class="header">
+        <div class="w3ls-header">
+            <div class="container">
+                <div class="w3ls-header-left">
+                    <div class="announce"><i class="fa fa-bullhorn" ></i>&nbsp;&nbsp;&nbsp;
+                    <ul class="line">
+                        <li style="margin-top: 0; ">餐饮须知:</li>
+                        <li style="margin-top: 0; ">1.请确保您的电话畅通,方便送餐员及时与您联系!</li>
+                        <li style="margin-top: 0; ">2.用餐高峰期时段及恶劣天气情况下,请您提早安排用餐时间,给您带来不便敬请谅解</li>
+                        <li style="margin-top: 0; ">3.最终解释权归食堂所有!</li>
+                    </ul>
+                    </div>
+                </div>
+                <div class="w3ls-header-right">
+                    <ul>
+                        <li class="head-dpdn">
+                            <i class="fa fa-phone" aria-hidden="true"></i> 电话: +01 222 33345
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <!-- navigation -->
+        <div class="navigation agiletop-nav">
+            <div class="container" >
+                <nav class="navbar navbar-default">
+                    <div class="navbar-header w3l_logo" >  
+                        <h1 ><a href="home.html" style="margin-left: -1400px;line-height: 20px"><img src="../static/image/logo.png" style="height:80px;width: 80px;" alt=""/><span>Best Food Collection</span></a></h1>
+                        
+                    </div>
+                    <nav class="top-nav" style="margin-right:180px;line-height: 20px;margin-top: 25px;margin-bottom: -30px">
+						<ul class="top-nav" style="color: #fff" >
 								食堂自助点餐系统登录界面
-                                <p>当前用户：<span id="userID"></span></p>
-							</ul>
-						</nav>
-						<div class="clearfix"> </div>
-					</div>
-				</div>
-			</div>
+                            <p>当前用户：<span id="userID"></span></p>
+						</ul>
+					</nav>
+					
+                    <div class="collapse navbar-collapse" id="bs-megadropdown-tabs" >
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="home.html" class="active" style="line-height: 0px;color: #fff;margin-top:-60px;">首页</a></li>
+                        </ul>
+                    </div>
+                    <div class="cart cart box_1">
+                        <button class="w3view-cart"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                        <div id="staplesbmincart">
+                            <form method="post" class="sbmincart-empty" action="news.html" target="">
+                                <button type="button" class="sbmincart-closer">×</button>
+                                <div class="sbmincart-footer">
+                                    <p class="sbmincart-empty-text">你的购物车是空的!</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- //navigation -->
+    </div>
+</div>
 <script>
     			    //设置userID
                 let text = window.location.search;
@@ -120,25 +166,17 @@
                 let userID = decodeURIComponent(param[1].split("=")[1]);
                 $("#userID").text(userID);
 </script>
-			<div class="news">
-				<div class="news-header" >
-					<div class="container">
-						<h1><span>本食堂</span> 菜单</h1>
-					</div>
-				</div>
-			<div class="clearfix"> </div>
-			<div class="News-page">
-				<div class="container">
-					<h2><span> </span>&nbsp;&nbsp;&nbsp;&nbsp; 可选餐点 &nbsp;<span> </span></h2>
-					<p>图案仅供参考，一切应以实物为准。本食堂保留最终解释权</p>
+<div class="news">
+	<div class="News-page">
+    	<div class="container">
 				<div class="recent-news">
 					<div class="recent-news-grid">
 						<div class="recent-news-grid-left">
-							<img src="../static/image/menu/d2.jpg" id="pic1" />
+							<img src="../static/image/bouili.jpg" id="pic1" />
 						</div>
 						<div class="recent-news-grid-right">
-							<p id="name1">油炸大白菜</p>
-							<p>包含你没有尝过的全新地沟油。</p>
+							<p id="name1">红烧肉</p>
+							<p>精选五花肉，优质秘方配料。</p>
 							<p id="price1">
 								单价：10元
 							</p>
@@ -153,11 +191,11 @@
 					</div>
 					<div class="recent-news-grid">
 						<div class="recent-news-grid-left">
-                            <img src="../static/image/menu/d2.jpg" id="pic2" />
+                            <img src="../static/image/liaoli.jpg" id="pic2" />
 						</div>
 						<div class="recent-news-grid-right">
-							<p id="name2">馒头蘸红糖</p>
-							<p>大量使用新型漂白粉和染色剂</p>
+							<p id="name2">日本料理</p>
+							<p>新鲜三文鱼，美味寿司</p>
 							<p id="price2">
 								单价：11元
 							</p>
@@ -171,11 +209,11 @@
 					</div>
 					<div class="recent-news-grid">
 						<div class="recent-news-grid-left">
-                            <img src="../static/image/menu/d3.jpg" id="pic3" />
+                            <img src="../static/image/noodle.jpg" id="pic3" />
 						</div>
 						<div class="recent-news-grid-right">
-							<p id="name3">炖石头</p>
-							<p>原料来自学校旧旱厕的奠基石</p>
+							<p id="name3">重庆小面</p>
+							<p>原汁原味的重庆特色面</p>
 							<p id="price3">
 								单价：12元
 							</p>
@@ -190,183 +228,273 @@
 					<div class="clearfix"> </div>
 					<button type="button" onclick="openwindows()">结算</button>
 				</div>
-				</div>
+			</div>
 			<div class="fearuted-diesh">
-				<div class="container">
-					<h3>Featured Dishes<span> </span></h3>
-						<div class="sreen-gallery-cursual">
-							<link href="../static/css/owl.carousel.css" rel="stylesheet">
-							    <script src="../static/js/owl.carousel.js"></script>
-							        <script>
-							    $(document).ready(function() {
-							      $("#owl-demo").owlCarousel({
-							         items :4,
+			<div class="container">
+				<h3>其它美食<span> </span></h3>
+				<div class="sreen-gallery-cursual">
+					<link href="../static/css/owl.carousel.css" rel="stylesheet">
+						<script src="../static/js/owl.carousel.js"></script>
+						<script>
+							$(document).ready(function() {
+							    $("#owl-demo").owlCarousel({
+							        items :4,
 							        lazyLoad : true,
 							        autoPlay : true,
 							        navigation : false,
 							        navigationText :  false,
 							        pagination : true,
-							      });
 							    });
-							    </script>
-						       <div id="owl-demo" class="owl-carousel">
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d1.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Fugiat nulla sint</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$30</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
-					                	</div>
+							});
+						</script>
+						<div id="owl-demo" class="owl-carousel">
+					        <div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/bouili.jpg" title="dish-name" />
 					                </div>
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d2.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Daute irure dolor</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$24</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
+					                <div class="item-info">
+					                	<div class="item-info-left">
+					                		<h4>红烧肉</h4>
+					                		<span class="item-rate"> </span>
 					                	</div>
-					                </div>
-
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d3.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Officia deserunt mollit</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$60</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
+					                	<div class="item-info-right">
+					                		<label>$10</label>
 					                	</div>
+					                	<div class="clearfix"> </div>
 					                </div>
-
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d4.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Pim minim veniam</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$17</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
+					            </div>
+							</div>
+					    	<div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/liaoli.jpg" title="dish-name" />
+					               	</div>
+					                <div class="item-info">
+					                	<div class="item-info-left">
+					                		<h4>日本料理</h4>
+					                		<span class="item-rate"> </span>
 					                	</div>
-					                </div>
-
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d1.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Fugiat nulla sint</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$30</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
+					                	<div class="item-info-right">
+					                		<label>$11</label>
 					                	</div>
+					                	<div class="clearfix"> </div>
 					                </div>
-
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d2.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Daute irure dolor</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$24</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
+					            </div>
+					        </div>
+							<div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/noodle.jpg" title="dish-name" />
+					                </div>
+					                <div class="item-info">
+					              		<div class="item-info-left">
+					                		<h4>重庆小面</h4>
+					                		<span class="item-rate"> </span>
 					                	</div>
-					                </div>
-
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d3.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Officia deserunt mollit</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$60</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
+					                	<div class="item-info-right">
+					                		<label>$12</label>
 					                	</div>
+					                	<div class="clearfix"> </div>
+					               	</div>
+					            </div>
+					        </div>
+							<div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/bouili.jpg" title="dish-name" />
 					                </div>
-
-					                <div class="item">
-					                	<div class="item-grid">
-					                		<div class="item-pic">
-					                			<img src="../static/image/menu/d4.jpg" title="dish-name" />
-					                		</div>
-					                		<div class="item-info">
-					                			<div class="item-info-left">
-					                				<h4>Pim minim veniam</h4>
-					                				<span class="item-rate"> </span>
-					                			</div>
-					                			<div class="item-info-right">
-					                				<label>$17</label>
-					                			</div>
-					                			<div class="clearfix"> </div>
-					                		</div>
+					                <div class="item-info">
+					                	<div class="item-info-left">
+					                		<h4>红烧肉</h4>
+					                		<span class="item-rate"> </span>
 					                	</div>
+					                	<div class="item-info-right">
+					                		<label>$10</label>
+					                	</div>
+					                	<div class="clearfix"> </div>
 					                </div>
+					            </div>
+					        </div>
+							<div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/liaoli.jpg" title="dish-name" />
+					                </div>
+					              	<div class="item-info">
+					                	<div class="item-info-left">
+					                		<h4>日本料理</h4>
+					                		<span class="item-rate"> </span>
+					                	</div>
+					                	<div class="item-info-right">
+					                		<label>$11</label>
+					                	</div>
+					                	<div class="clearfix"> </div>
+					                </div>
+					            </div>
+					        </div>
+							<div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/noodle.jpg" title="dish-name" />
+					                </div>
+					                <div class="item-info">
+					                	<div class="item-info-left">
+					                		<h4>重庆小面</h4>
+					                		<span class="item-rate"> </span>
+					                	</div>
+					                	<div class="item-info-right">
+					                		<label>$12</label>
+					                	</div>
+					                	<div class="clearfix"> </div>
+					                </div>
+					            </div>
+					        </div>
+							<div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/bouili.jpg" title="dish-name" />
+					                </div>
+					                <div class="item-info">
+					                	<div class="item-info-left">
+					                		<h4>红烧肉</h4>
+					                		<span class="item-rate"> </span>
+					                	</div>
+					                	<div class="item-info-right">
+					                		<label>$10</label>
+					                	</div>
+					                	<div class="clearfix"> </div>
+					                </div>
+					            </div>
+					        </div>
 
-				              </div>
-
+					        <div class="item">
+					            <div class="item-grid">
+					                <div class="item-pic">
+					                	<img src="../static/image/liaoli.jpg" title="dish-name" />
+					                </div>
+					                <div class="item-info">
+					               		<div class="item-info-left">
+					                		<h4>日本料理</h4>
+					                		<span class="item-rate"> </span>
+					                	</div>
+					                	<div class="item-info-right">
+					                		<label>$11</label>
+					                	</div>
+					                	<div class="clearfix"> </div>
+					                </div>
+					            </div>
+					        </div>
+				        </div>
 				</div>
 			</div>
-			</div>
-			</div>
-			</div>
-
+		</div>
+	</div>
+</div>		
 <div class="copyw3-agile">
     <div class="container">
         <p>Copyright &copy; 2019.小学期<a href="#" target="_blank" title="美味无穷">美味无穷</a></p>
     </div>
 </div>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+</script>
+<script>
+		$(function() {
+			var pull 		= $('#pull');
+			menu 		= $('nav ul');
+			menuHeight	= menu.height();
+			$(pull).on('click', function(e) {
+				e.preventDefault();
+				menu.slideToggle();
+			});
+			$(window).resize(function(){
+				var w = $(window).width();
+				if(w > 320 && menu.is(':hidden')) {
+					menu.removeAttr('style');
+				}
+			});
+		});
+</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<script>
+			$(function() {
+				var pull 		= $('#pull');
+					menu 		= $('nav ul');
+					menuHeight	= menu.height();
+				$(pull).on('click', function(e) {
+					e.preventDefault();
+					menu.slideToggle();
+				});
+				$(window).resize(function(){
+	        		var w = $(window).width();
+	        		if(w > 320 && menu.is(':hidden')) {
+	        			menu.removeAttr('style');
+	        		}
+	    		});
+			});
+	</script>
+<script>
+    $(".w3view-cart").on("click",
+            function(){
+                $btn=$(this)
+            $("#staplesbmincart").css("display","block");
 
+            })
+    $(".sbmincart-closer").on("click",function(){
+        $("#staplesbmincart").css("display","none");
+    })
+</script>
+<!-- //cart-js -->
+<!-- Owl-Carousel-JavaScript -->
+<script src="../static/js/owl.carousel.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#owl-demo").owlCarousel ({
+            items : 3,
+            lazyLoad : true,
+            autoPlay : true,
+            pagination : true
+        });
+    });
+</script>
+<!-- //Owl-Carousel-JavaScript -->
+<!-- start-smooth-scrolling -->
+<script src="../static/js/SmoothScroll.min.js"></script>
+<script type="text/javascript" src="../static/js/move-top.js"></script>
+<script type="text/javascript" src="../static/js/easing.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
 
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+<!-- smooth-scrolling-of-move-up -->
+<script type="text/javascript">
+    $(document).ready(function() {
+        /*
+         var defaults = {
+         containerID: 'toTop', // fading element id
+         containerHoverID: 'toTopHover', // fading element hover id
+         scrollSpeed: 1200,
+         easingType: 'linear'
+         };
+         */
+
+        $().UItoTop({ easingType: 'easeOutQuart' });
+
+    });
+</script>
+<script src="../static/js/bootstrap.js"></script>
 </body>
 </html>

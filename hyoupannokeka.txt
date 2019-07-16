@@ -598,3 +598,63 @@ Sub-clause0: positive:还1-不错
 
 
 
+好咸好咸
+[pair('好', 'a'), pair('咸', 'a'), pair('好', 'a'), pair('咸', 'a')]
+
+好咸好咸
+Score:2.0
+Sub-clause0: positive:好 好 negative:咸 咸 
+{'score': 2.0, 'su-clause0': {'score': 2.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}, {'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}], 'negative': [{'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}, {'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好咸
+[pair('好', 'a'), pair('咸', 'a')]
+
+好咸
+Score:1.0
+Sub-clause0: positive:好 negative:咸 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}], 'negative': [{'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+超咸
+[pair('超', 'v'), pair('咸', 'ns')]
+
+超咸
+Score:-2.0
+Sub-clause0: negative:超1-咸 
+{'score': -2.0, 'su-clause0': {'score': -2.0, 'positive': [], 'negative': [{'key': '咸', 'adverb': [{'key': '超', 'position': 1, 'value': 2.0}], 'denial': [], 'value': 1.0, 'score': 2.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+不好吃
+[pair('不', 'd'), pair('好吃', 'v')]
+
+不好吃
+Score:-3.0
+Sub-clause0: positive:不1-好吃 
+{'score': -3.0, 'su-clause0': {'score': -3.0, 'positive': [{'key': '好吃', 'adverb': [], 'denial': [{'key': '不', 'position': 1, 'value': 1.0}], 'value': 3.0, 'score': -3.0}], 'negative': [], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+好难吃
+[pair('好', 'a'), pair('难吃', 'a')]
+
+好难吃
+Score:1.0
+Sub-clause0: positive:好 negative:难吃 
+{'score': 1.0, 'su-clause0': {'score': 1.0, 'positive': [{'key': '好', 'adverb': [], 'denial': [], 'value': 2.0, 'score': 2.0}], 'negative': [{'key': '难吃', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
+咸死了
+[pair('咸', 'a'), pair('死', 'v'), pair('了', 'ul')]
+
+咸死了
+Score:-2.0
+Sub-clause0: negative:咸 死 
+{'score': -2.0, 'su-clause0': {'score': -2.0, 'positive': [], 'negative': [{'key': '咸', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}, {'key': '死', 'adverb': [], 'denial': [], 'value': 1.0, 'score': 1.0}], 'conjunction': [], 'punctuation': [], 'pattern': []}}
+
+
+
