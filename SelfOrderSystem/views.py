@@ -139,6 +139,8 @@ def PayEndProcess(request):
     DataBase.InsertOrderList(orderNum,sequenceNum,meal,userID,"waiting")
     return JsonResponse({'orderNum': orderNum,'waitingNum':sequenceNum})                  #返回的orderNum放到url,付完款跳转到取餐完成评价界面
 
+def home(request):
+    return render_to_response("home.html")
 
 
 def Kitchen(request):
