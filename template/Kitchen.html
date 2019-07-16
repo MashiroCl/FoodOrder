@@ -20,9 +20,7 @@
                 type: "POST",
                 datatype:"json",
                 success: function (data) {
-                    alert("SUCCESS");
                     order=JSON.parse(data.order);
-                    alert("order = "+order);
                     var tableData=""
                     for(var i=0;i<order.length;i++){
                         tableData+="<tr >"+"<td id='CheckStoreT"+i+"'>"+order[i]+"</td>"+"<td>"+
@@ -34,13 +32,9 @@
 
                     $("#tbody1").html(tableData)
 
-                    alert(tableData);
                 },
                 error:function(data){
                     alert("FAIL");
-
-                    alert(data)
-
                 }
             });
         }
@@ -53,11 +47,7 @@
             {#alert(id);#}
             const i=parseInt(id.split('re')[1]);
             const newId="#CheckStoreT"+i;
-            alert(newId);
-
             const string=$(newId).text();
-            alert(string);
-            {#!!!!!!!!!!!!!!!!!!!!!!!! 改成四道菜记得修改#}
             var orderNum=string.split(',')[0];
             var temp=string.split(',');
             let dish=[];
@@ -70,8 +60,6 @@
                 dishNum.push(temp[2].split('_')[1]);
                 dishNum.push(temp[3].split('_')[1]);
                 dishNum.push(temp[4].split('_')[1]);
-                alert(dish);
-                alert(dishNum);
 
             }
             else if(temp.length==7)
@@ -93,15 +81,18 @@
             dataType:'json',
             data:{dish:dish,
                   dishNum:dishNum},
-            {#    没有显示 ！！！！！！！！！！！！！！！！！！！！！！！！！！#}
             success: function (data) {
-                if(isEmptyObject(data.numberMinus)){
-                        alert("对象为空");
-                }
-                else{
-                    numberMinus=JSON.parse(data.numberMinus);
-                    alert(numberMinus);
-                }
+                if(data.numberMinus.length<1)
+                    alert("剩余库存足够");
+                else
+                    alert(data.numberMinus+"库存不够了");
+
+                    {#if(data.numberMinus == "" || data.numberMinus == null || adata.numberMinus == undefined){ // "",null,undefined#}
+                    {#    alert("剩余库存足够");#}
+                    {#    }#}
+                    {#else{#}
+                    {#    alert(data.numberMinus);#}
+                    {#    alert("没有库存了");}#}
             },
                 error:function(data){
                 alert("ERROR");
@@ -116,10 +107,8 @@
         function made(id){
                const i=parseInt(id.split('de')[1]);
             const newId="#CheckStoreT"+i;
-            alert(newId);
 
             const string=$(newId).text();
-            alert(string);
             var orderNum=string.split(',')[0];
                   $.ajax({
             url:"http://127.0.0.1:8000/KitchenFinished/",
@@ -130,7 +119,6 @@
               });
         }
     </script>
-    <button name="" onclick="checkStore()"></button>
     <h3>正在烹饪中……</h3>
     <table>
         <tbody id="tbody1">

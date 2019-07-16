@@ -374,7 +374,7 @@ if __name__=="__main__":
     # Insertcomment("2","2","不好吃啊","-1")
     # GetComment(2)
     # temp=GetOrderList1(state="waiting")
-    temp2=GetOrderList2(orderID=1)
+    # temp2=GetOrderList2(orderID=1)
     # print(temp)
     # print(temp2[0][4])
     # print(temp)

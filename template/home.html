@@ -19,14 +19,24 @@
     <script src="../static/js/myslideup.js"></script>
     <!-- //js -->
     <!-- web-fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
-    <link href="http://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">
+{#    <link href="http://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">#}
+{#    <link href="http://fonts.googleapis.com/css?family=Yantramanav:100,300,400,500,700,900" rel="stylesheet">#}
 </head>
 <body>
 <script type="text/javascript">
+    let text = window.location.search;
+    let param = text.split("?");
+    let username = decodeURIComponent(param[1].split("=")[1]);
+    let url = "../news?userId="+ username;
     $(function(){
         $(".line").slideUp();
+        let text = window.location.search;
+        let param = text.split("?");
+        let username = decodeURIComponent(param[1].split("=")[1]);
     })
+    function jump() {
+        window.location.href = url;
+    }
 </script>
 <div class="banner1">
     <!-- header -->
@@ -87,9 +97,9 @@
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">菜单 <b class="caret"></b></a>
                                 <ul class="dropdown-menu multi-column columns-3">
                                             <ul class="multi-column-dropdown">
-                                                <li><a href="news.html">早餐</a></li>
-                                                <li><a href="news.html">午餐</a></li>
-                                                <li><a href="news.html">晚餐</a></li>
+                                                <li><a onclick="jump()">早餐</a></li>
+                                                <li><a onclick="jump()">午餐</a></li>
+                                                <li><a onclick="jump()">晚餐</a></li>
                                             </ul>
                                         <div class="clearfix"></div>
                                 </ul>
@@ -120,7 +130,7 @@
     <div class="container">
         <div class="add-products-row">
             <div class="w3ls-add-grids">
-                <a href="news.html">
+                <a onclick="jump()">
                     <!--食物介绍-->
                     <h4><span>南北</span>美食,风味<span>小吃</span></h4>
                     <h5>大连理工大学第十食堂</h5>
@@ -128,7 +138,7 @@
                 </a>
             </div>
             <div class="w3ls-add-grids w3ls-add-grids-right">
-                <a href="news.html">
+                <a onclick="jump()">
                     <!--食物介绍-->
                     <h4>2019年食品评级为<span>A级</span></h4>
                     <h5>食品安全、可视化管理、设置意见箱</h5>
@@ -151,7 +161,7 @@
             <div class="col-md-9 spldishes-grids">
                 <!-- Owl-Carousel -->
                 <div id="owl-demo" class="owl-carousel text-center agileinfo-gallery-row">
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/breakfast.jpg" title="Our latest gallery" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>营养早餐</h4>
@@ -159,7 +169,7 @@
                             <span>充满活力每一天！</span>
                         </div>
                     </a>
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/liaoli.jpg" title="Our latest gallery" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>日韩料理</h4>
@@ -167,7 +177,7 @@
                             <span>食材新鲜,吃着放心！</span>
                         </div>
                     </a>
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/zhab.jpg" title="Our latest gallery" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>炸饼</h4>
@@ -175,7 +185,7 @@
                             <span>外表金黄，酥脆香,粗粮更健康!</span>
                         </div>
                     </a>
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/sala.jpg" title="Our latest gallery" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>沙拉</h4>
@@ -184,7 +194,7 @@
 
                         </div>
                     </a>
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/dessert.jpg" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>萌萌甜点</h4>
@@ -192,7 +202,7 @@
                             <span>饭后来一点，甜蜜一整天!</span>
                         </div>
                     </a>
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/bouili.jpg" title="Our latest gallery" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>红烧肉</h4>
@@ -200,7 +210,7 @@
                             <span>软糯可口，入口即化，是妈妈的味道!</span>
                         </div>
                     </a>
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/paigu.jpg" title="Our latest gallery" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>糖醋排骨</h4>
@@ -208,7 +218,7 @@
                             <span>酸甜可口!</span>
                         </div>
                     </a>
-                    <a href="news.html" class="item g1">
+                    <a onclick="jump()" class="item g1">
                         <img class="lazyOwl" src="../static/image/fish.jpg" title="Our latest gallery" alt=""/>
                         <div class="agile-dish-caption">
                             <h4>水煮鱼</h4>
@@ -285,4 +295,4 @@
 </script>
 <script src="../static/js/bootstrap.js"></script>
 </body>
-</html
+</html>

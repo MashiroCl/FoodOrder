@@ -21,6 +21,13 @@
 					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
 				});
 			});
+			function jump() {
+                let text = window.location.search;
+                let param = text.split("?");
+                let username = decodeURIComponent(param[1].split("=")[1]);
+                let url = "../home?userId="+ username;
+                window.location.href = url;
+            }
 		</script>
 
 		<script>
@@ -139,7 +146,7 @@
 					
                     <div class="collapse navbar-collapse" id="bs-megadropdown-tabs" >
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="home.html" class="active" style="line-height: 0px;color: #fff;margin-top:-60px;">首页</a></li>
+                            <li><a onclick="jump()" class="active" style="line-height: 0px;color: #fff;margin-top:-60px;">首页</a></li>
                         </ul>
                     </div>
                     <div class="cart cart box_1">

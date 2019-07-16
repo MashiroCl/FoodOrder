@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>注册-风格转换</title>
+    <title>注册</title>
 
     <link rel="stylesheet" type="text/css" href="../static/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
@@ -67,7 +67,6 @@
                             let username = $("#username-input").val();
                                     const password = $('#password-input').val();
                                     const phone = $('#phone-input').val();
-                            alert(username);
                                     $.ajax({
                                         url:"http://127.0.0.1:8000/registerCheck/",            //!!!!!!!!!!!!!!
                                         data:{username:username,

@@ -34,7 +34,6 @@
             },
             error:function(data){
                 alert("FAIL");
-                alert(data)
 
             }
         });
@@ -48,7 +47,6 @@
     let param = text.split("?");
     let waitingNum = decodeURIComponent(param[1].split("=")[1]);
     let orderAbbre=decodeURIComponent(param[3].split("=")[1]);
-    alert(waitingNum+"hao!!!!!!!");
     $("#Num").html(waitingNum);
 </script>
 <script>
@@ -56,7 +54,6 @@
         let text = window.location.search;
         let param = text.split("?");
         let userID = decodeURIComponent(param[4].split("=")[1]);
-        alert("用户名是"+userID);
         let d1 = decodeURIComponent(param[3]);
         let d2 = decodeURIComponent(param[4]);
         let d3 = decodeURIComponent(param[5]);

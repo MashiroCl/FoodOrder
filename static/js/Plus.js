@@ -25,9 +25,7 @@ function checkNumber(obj) {
 }
 
 function openwindows() {
-    alert("OPENWINDOW");
     Final_Settlement();
-    alert("JUMP!");
     jump2();
     //window.open("http://127.0.0.1:8000/Settlement/", "newwindow", "height=800, width=800, top=200,left=400,toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, status=no");
 }
@@ -40,17 +38,17 @@ function Final_Settlement() {
     Dish3=$("#B31").val()
     var Price_in_total = $("#B11").val()*10 + $("#B21").val()*11 + $("#B31").val()*12 ;//通过id获取文本框对象;
     document.cookie=Price_in_total
-    //return  "您本次点菜结果如下：\n" + "油炸大白菜 份数：" + $('#B11').val() + "\n" + "馒头蘸红糖 份数：" + $('#B21').val() + "\n" + "炖石头 份数：" + $('#B31').val() + "\n" +
+
      //"总计价格为： " + Price_in_total//通过文本框对象获取value值
     temp="您本次点菜结果如下：\n"
     if(Dish1!=0){
-        temp=temp+"油炸大白菜 份数："+Dish1+"\n"
+        temp=temp+"红烧肉 份数："+Dish1+"\n"
     }
     if(Dish2!=0){
-        temp=temp+"馒头蘸红糖 份数："+Dish2+"\n"
+        temp=temp+"日本料理 份数："+Dish2+"\n"
     }
     if(Dish3!=0){
-        temp=temp+"炖石头 份数："+Dish3+"\n"
+        temp=temp+"重庆小面 份数："+Dish3+"\n"
     }
     alert(temp+ "总计价格为： " + Price_in_total);
 }
@@ -67,16 +65,16 @@ function jump2(){
     var temp=" ";
     var orderAbbre="";
     if(Dish1!=0){
-        temp=temp+"油炸大白菜 份数："+Dish1+"\n"
+        temp=temp+"红烧肉 份数："+Dish1+"\n"
         orderAbbre=orderAbbre+"1_"+Dish1+",";
     }
     if(Dish2!=0){
-        temp=temp+"馒头蘸红糖 份数："+Dish2+"\n"
+        temp=temp+"日本料理 份数："+Dish2+"\n"
         orderAbbre=orderAbbre+"2_"+Dish2+",";
 
     }
     if(Dish3!=0){
-        temp=temp+"炖石头 份数："+Dish3+"\n"
+        temp=temp+"重庆小面 份数："+Dish3+"\n"
         orderAbbre=orderAbbre+"3_"+Dish3+",";
     }
     let url1 = "../Settlement/?price="+Price_in_total+"?order="+temp+"?username="+userID+"?orderAbbre="+orderAbbre;//此处拼接内容
@@ -105,7 +103,6 @@ function GetWaitingNum() {
             alert("正在烹饪中，请耐心等待");
             waitingNum=JSON.parse(data.waitingNum)
             var orderNum=JSON.parse(data.orderNum)
-            alert("comment = "+waitingNum);
             let url = "../waiting?waitingNum="+waitingNum+"?orderNum="+orderNum+"?orderAbbre="+orderAbbre+"?userID="+userID;
             window.location.href = url;
         },
@@ -114,4 +111,12 @@ function GetWaitingNum() {
 
         }
     });
+}
+
+function abandon1() {
+    let text = window.location.search;
+    let param = text.split("?");
+    let userID = decodeURIComponent(param[3].split("=")[1]);
+    let url = "../news?userId="+ username;
+    window.location.href = url
 }

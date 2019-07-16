@@ -10,7 +10,6 @@
     <script src="../static/js/jquery-3.0.0.min.js"></script>
     <script src="../static/js/jquery.params.js"></script>
     <script type="text/javascript">
-
         jQuery(document).ready(function($) {
             $(".scroll").click(function(event){
                 event.preventDefault();
@@ -20,19 +19,6 @@
     </script>
 
     <script>
-        //按名称获取Cookie
-        function GetCookieByName(name) {
-            var startIndex = document.cookie.indexOf(name); //开始索引
-            alert(startIndex);
-            if (startIndex > -1) {
-                var tempStr = document.cookie.substring(startIndex, document.cookie.length);
-                var endIndex = tempStr.indexOf(";")//结束索引：第一个分号 索引
-                var item = tempStr.substring(0, endIndex);
-                return item.split("=")[1];
-            }
-            return "";
-        }
-
         //页面加载函数
         $(function() {
             var text = window.location.search;
@@ -40,6 +26,9 @@
             var Name = decodeURIComponent(param[1].split("=")[1]);
             var Price = decodeURIComponent(param[2].split("=")[1]);
             var ID = decodeURIComponent(param[3].split("=")[1]);
+            let imgSrc = "../static/image/d" + ID + ".jpg";
+            $("#img1").attr('src', imgSrc);
+
 
             var url = "../menu?name="+Name+"?price="+Price;
             //var Name = GetCookieByName("name");
@@ -49,8 +38,6 @@
             $("#label").html(Name);
             $("#price").text(Price);
 
-            alert(Name);
-            alert(Price);
 
             $.ajax({
             url:"http://127.0.0.1:8000/getComment/",
@@ -59,13 +46,10 @@
             type: "POST",
              datatype:"json",
                 success: function (data) {
-                {#alert("WDNMD");#}
                 comment=JSON.parse(data.comment)
-                alert("comment = "+comment);
                 var tableData="<tr>";
                     for(var i=0;i<comment.length;i++){
-                        {#alert(comment.length);#}
-                        tableData+="<tr>"+"<td>"+comment[i]+"</td>"+"</tr>";
+                        tableData+="<tr>"+"<td>用户评价："+comment[i][0]+"</td>"+"</tr>";
                     }
                     tableData+="</tr>";
                     $("#tbody1").html(tableData);
@@ -103,9 +87,8 @@
 
     </label>
     <div class="recent-news-grid-right">
-        <img src="..static/image/menu/d2.jpg" title="图片仅供参考" />
+        <img id="img1" title="图片仅供参考" style="height: 200px; width: 180px"/>
         <div id="name"> </div>
-        <p>配方：新鲜大白菜 + 地沟油</p>
         <div id="price"> </div>
     </div>
 </div>

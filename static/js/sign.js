@@ -54,7 +54,7 @@
                         alert("用户名密码不匹配");
                     } else {
                         // alert('注册成功');
-                        let url = "../news?id="+username;//此处拼接内容
+                        let url = "../home?id="+username;//此处拼接内容
                         // window.
                         location.href = url;
                     }

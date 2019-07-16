@@ -168,12 +168,17 @@ def checkStore(request):
     print(number)
     print(storeId)
     numberMinus=[]
+    lalala=""
     for i in range(len(number)):
         if number[i]<0:
             numberMinus.append(storeId[i])
+            lalala = lalala + "编号" + storeId[i]
+
+    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    print(numberMinus)
 
     numberMinus = json.dumps(numberMinus)
-    numberMinus = JsonResponse({"numberMinus": numberMinus})
+    numberMinus = JsonResponse({"numberMinus": lalala})
     return numberMinus
 
 def KitchenFinished(request):
