@@ -38,5 +38,6 @@ urlpatterns = [
     path('checkStore/', SelfOrderSystem.views.checkStore),
     path('KitchenFinished/', SelfOrderSystem.views.KitchenFinished),
     path('getCommentFromCus/', SelfOrderSystem.views.getCommentFromCus),
+    path('FoodDelivered/', SelfOrderSystem.views.FoodDelivered),
 
 ]

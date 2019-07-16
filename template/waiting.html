@@ -16,16 +16,21 @@
 
     function myFunction() {
         console.log("轮训任务=================>" + i++);
+         var text = window.location.search;
+         var param = text.split("?");
+         var orderNum = decodeURIComponent(param[2].split("=")[1]);
 
         $.ajax({
-            url:"http://127.0.0.1:8000/KitchenFinished/",
-            data:{state: "check"},
+            url:"http://127.0.0.1:8000/FoodDelivered/",
+            data:{state: orderNum},
             type: "POST",
             datatype:"json",
             success: function (data) {
                 alert("SUCCESS");
-                order=JSON.parse(data.order);
-                alert("order = "+order);
+                if(data.isFinished == "1")
+                {
+                    $("#btn").removeAttr("disabled");
+                }
             },
             error:function(data){
                 alert("FAIL");
@@ -37,7 +42,7 @@
 </script>
 <body>
 <h3>您的取餐号是：<span id="Num"></span></h3>
-<button onclick="getMeal()">确认取餐</button>
+<button id="btn" onclick="getMeal()" disabled="true">确认取餐</button>
 <script>
     let text = window.location.search;
     let param = text.split("?");

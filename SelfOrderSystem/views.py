@@ -181,7 +181,15 @@ def KitchenFinished(request):
     return HttpResponse("finished")
 
 def FoodDelivered(request):
-    orderNum=request.POST.get("orderNum")  #订单号
+    orderNum=request.POST.get("state")  #订单号
+    temp=DataBase.GetOrderList2(orderNum)
+    state=temp[0][4]
+    if(state=="waiting"):
+        state=0
+    elif(state=="finished"):
+        state=1
+    return JsonResponse({"isFinished":state})
+
     DataBase.UpdateOrderList(orderNum,"finished")
 
 def getCommentFromCus(request):
